@@ -1,0 +1,13 @@
+.ham-button{
+    height: 2px;
+    width: 48px;
+    margin: 4px;
+    padding: 4px;
+    background-color: black;
+    transition: 1s;
+}
+
+.ham-button:hover {
+    background-color: wheat;
+    transform: rotateX(180);
+}
