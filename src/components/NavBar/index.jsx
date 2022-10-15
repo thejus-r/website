@@ -1,34 +1,69 @@
-import { useState } from "react";
-import "./index.css";
+import { motion, AnimatePresence, useCycle } from "framer-motion";
+import routes from "../../config/routes";
+import MenuButton from "../../utils/MenuButton";
+
+const dropDownVariants = {
+  hidden: {
+    height: 0,
+    transition: { duration: 0.2, staggerChildren: 0.1, when: "afterChildren" },
+  },
+  visible: {
+    height: "54vh",
+    transition: { staggerChildren: 0.1, when: "beforeChildren" },
+  },
+};
+
+const dropDownItemVariants = {
+  hidden: {
+    y: -20,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 export default function NavBar() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, toggleOpen] = useCycle(false, true);
   return (
-    <div className="bg-gray-100 ">
-      <div className="flex flex-row w-screen justify-between items-center p-6">
-        <div className="logo">
-          <h1 className="text-2xl lg:text-3xl font-black">
-            <span>tr</span>
-            <span className="text-red-500">.</span>
-          </h1>
+    <div className="w-screen top-0 left-0">
+      <div className="flex bg-white justify-between">
+        <div className="text-3xl p-6">
+          <span>tr</span>
+          <span className="text-red-500">.</span>
         </div>
-        <div>
-          <div
-            onClick={() => {
-              setOpen(!open);
-            }}
-          >
-            Hamburger Button
-          </div>
-        </div>
+        <motion.div
+          className="p-8 cursor-pointer"
+          whileTap={{ scale: 0.97 }}
+          onClick={() => toggleOpen(!isOpen)}
+        >
+          open/close
+        </motion.div>
       </div>
-      {open && (
-        <div className="w-screen bg-gray-100 absolute flex flex-col text-center p-8">
-          <div className="text-3xl font-bold m-4">home</div>
-          <div className="text-3xl font-bold m-4">projects</div>
-          <div className="text-3xl font-bold m-4">about</div>
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.ul
+            variants={dropDownVariants}
+            initial="hidden"
+            animate={isOpen && "visible"}
+            exit="hidden"
+            className="bg-white"
+          >
+            {routes.map((route) => {
+              return (
+                <motion.li
+                  key={route.name}
+                  variants={dropDownItemVariants}
+                  className="text-4xl text-center p-4"
+                >
+                  <a href={route.path}>{route.name}</a>
+                </motion.li>
+              );
+            })}
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
