@@ -8,9 +8,8 @@
         font-family: 'Chillax', sans-serif;
         font-family: 'Clash Display', sans-serif;
     }
+
+    .view-port{
+        margin-top: 84px;
+    }
 }
-/* 
-* {
-    font-family: 'Chillax', sans-serif;
-    font-family: 'Clash Display', sans-serif;
-} */

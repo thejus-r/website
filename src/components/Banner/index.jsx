@@ -2,7 +2,7 @@ import "./index.css";
 
 export default function Banner() {
   return (
-    <div className="banner flex justify-center flex-col xl:ml-96 lg:ml-72 md:ml-48 sm:ml-32 ml-4">
+    <div className="view-port banner flex justify-center flex-col xl:ml-96 lg:ml-72 md:ml-48 sm:ml-32 ml-4">
       <div className="text-white">
         <div className="text- sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
           Thejus Rajendran
