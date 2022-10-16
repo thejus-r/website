@@ -27,19 +27,22 @@ const dropDownItemVariants = {
 export default function NavBar() {
   const [isOpen, toggleOpen] = useCycle(false, true);
   return (
-    <div className="w-screen top-0 left-0">
-      <div className="flex bg-white justify-between">
+    <div className="w-screen absolute top-0 left-0">
+      <div className="flex bg-white justify-between items-center">
         <div className="text-3xl p-6">
           <span>tr</span>
           <span className="text-red-500">.</span>
         </div>
-        <motion.div
+
+        <MenuButton toggleOpen={toggleOpen} isOpen={isOpen} />
+
+        {/* <motion.div
           className="p-8 cursor-pointer"
           whileTap={{ scale: 0.97 }}
           onClick={() => toggleOpen(!isOpen)}
         >
           open/close
-        </motion.div>
+        </motion.div> */}
       </div>
       <AnimatePresence>
         {isOpen && (
