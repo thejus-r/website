@@ -7,9 +7,20 @@
     body {
         font-family: 'Chillax', sans-serif;
         font-family: 'Clash Display', sans-serif;
+        overflow: hidden;
     }
 
     .view-port{
         margin-top: 84px;
+    }
+
+    .cursor {
+        position:absolute;
+        height: 32px;
+        width: 32px;
+        border-radius: 100%;
+        background-color: blue;
+        pointer-events: none;
+        z-index: 100;
     }
 }
