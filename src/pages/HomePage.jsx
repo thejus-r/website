@@ -1,5 +1,9 @@
 import Banner from "../components/Banner";
 
 export default function HomePage() {
-  return <Banner />;
+  return (
+    <div className="view-port">
+      <Banner />;
+    </div>
+  );
 }
