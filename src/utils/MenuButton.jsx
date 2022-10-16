@@ -1,10 +1,29 @@
 import { motion, useCycle } from "framer-motion";
 
 const iconVarients = {
-  initial: { rotate: 0 },
+  initial: {
+    rotate: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+    },
+  },
 
-  openTop: { x: -5, y: 5, rotate: 45 },
-  openBottom: { x: -5, y: -5, rotate: -45 },
+  openTop: {
+    x: -5,
+    y: 5,
+    rotate: 45,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+    },
+  },
+  openBottom: {
+    x: -5,
+    y: -5,
+    rotate: -45,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+    },
+  },
 };
 
 export default function MenuButton({ toggleOpen, isOpen }) {
