@@ -1,79 +1,106 @@
 import { motion, AnimatePresence, useCycle } from "framer-motion";
+import MenuButton from "./MenuButton";
 import routes from "../../config/routes";
-import MenuButton from "../../utils/MenuButton";
+import BrandLogo from "./BrandLogo";
 
-const dropDownVariants = {
-  hidden: {
-    height: 0,
+const navBarVariants = {
+  closed: {
+    height: "96px",
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
-      staggerChildren: 0.1,
+    },
+  },
+  open: {
+    height: "70vh",
+    backgroundColor: "#ffffff",
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1,
+    },
+  },
+};
+
+const dropDownVariants = {
+  closed: {
+    opacity: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      staggerChildren: 0.2,
       when: "afterChildren",
     },
   },
-  visible: {
-    height: "54vh",
+  open: {
+    opacity: 1,
     transition: {
       duration: 0.5,
       ease: [0.6, 0.01, -0.05, 0.95],
       staggerChildren: 0.1,
-      when: "beforeChildren",
+      delayChildren: 0.3,
     },
   },
 };
 
 const dropDownItemVariants = {
-  hidden: {
+  closed: {
     y: -20,
     opacity: 0,
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
     },
   },
-  visible: {
+  open: {
     y: 0,
     opacity: 1,
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
     },
   },
+  hover: {
+    scale: 1.05,
+  },
+  tap: {
+    scale: 0.95,
+  },
 };
 
 export default function NavBar() {
   const [isOpen, toggleOpen] = useCycle(false, true);
   return (
-    <div className="w-screen absolute top-0 left-0 z-10">
-      <div className="flex bg-white justify-between items-center">
-        <div className="text-3xl p-6">
-          <span>tr</span>
-          <span className="text-red-500">.</span>
+    <AnimatePresence>
+      <motion.div
+        variants={navBarVariants}
+        initial="closed"
+        animate={isOpen ? "open" : "closed"}
+        className="w-screen"
+      >
+        <div className="flex h-[96px] px-8 justify-between items-center">
+          <BrandLogo isOpen={isOpen} />
+          <MenuButton toggleOpen={toggleOpen} isOpen={isOpen} />
         </div>
-
-        <MenuButton toggleOpen={toggleOpen} isOpen={isOpen} />
-      </div>
-      <AnimatePresence>
         {isOpen && (
-          <motion.ul
+          <motion.div
+            className="text-4xl md:text-6xl lg:text-7xl text-center"
             variants={dropDownVariants}
-            initial="hidden"
-            animate={isOpen && "visible"}
-            exit="hidden"
-            className="bg-white"
+            initial="closed"
+            animate="open"
+            exit="closed"
           >
             {routes.map((route) => {
               return (
-                <motion.li
+                <motion.div
+                  className="m-6 md:m-10 lg:m-12"
                   key={route.name}
                   variants={dropDownItemVariants}
-                  className="text-4xl text-center p-4"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <a href={route.path}>{route.name}</a>
-                </motion.li>
+                </motion.div>
               );
             })}
-          </motion.ul>
+          </motion.div>
         )}
-      </AnimatePresence>
-    </div>
+      </motion.div>
+    </AnimatePresence>
   );
 }
