@@ -1,78 +1,54 @@
-import "./index.css";
-import { AnimatePresence, motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
+import TextAnimation from "../../utils/TextAnimation";
 
+// variants
 const banner = {
-  hidden: { opacity: 0, y: -400 },
-  visible: {
-    y: 0,
-    opacity: 1,
+  animate: {
     transition: {
-      duration: 2,
-      ease: [0.6, 0.01, -0.05, 0.95],
+      staggerChildren: 0.25,
     },
   },
 };
 
+const textAnimation = {
+  initial: {
+    y: 80,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1,
+    },
+  },
+};
+
+// Main Banner Component
 export default function Banner() {
   return (
-    <AnimatePresence>
-      <div className="banner flex text-white justify-center flex-col xl:ml-96 lg:ml-72 md:ml-48 sm:ml-32 ml-4 overflow-clip">
-        <BannerTop title={"Thejus Rajendran"} />
-        <BannerMiddle title={"user experience"} />
-        <BannerBottom title={"designer"} />
-      </div>
-    </AnimatePresence>
+    <div className="m-12 sm:m-20 md:m-32 lg:m-48 xl:m-55 text-white">
+      <motion.div
+        className="sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-[Chillax]"
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+          transition: { delay: 0.75, duration: 0.3 },
+        }}
+      >
+        thejus rajendran
+      </motion.div>
+      <motion.div variants={banner} initial="initial" animate="animate">
+        <div className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl overflow-hidden font-thin md:my-2">
+          <motion.div variants={textAnimation}>user experience</motion.div>
+        </div>
+        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl overflow-hidden font-semibold">
+          <motion.div variants={textAnimation}>designer</motion.div>
+        </div>
+      </motion.div>
+    </div>
   );
 }
 
-const BannerTop = ({ title }) => (
-  <motion.div
-    className="text- sm:text-lg md:text-xl lg:text-2xl xl:text-3xl overflow-hidden"
-    variants={banner}
-    initial="hidden"
-    animate="visible"
-  >
-    {title}
-  </motion.div>
-);
-
-const BannerMiddle = ({ title }) => (
-  <motion.div
-    className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-thin"
-    variants={banner}
-    initial="hidden"
-    animate="visible"
-  >
-    {title}
-  </motion.div>
-);
-
-const BannerBottom = ({ title }) => (
-  <motion.div
-    className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"
-    variants={banner}
-    initial="hidden"
-    animate="visible"
-  >
-    {title}
-  </motion.div>
-);
-
-{
-  /* <div className="banner flex text-white justify-center flex-col xl:ml-96 lg:ml-72 md:ml-48 sm:ml-32 ml-4">
-<div className="text- sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
-  Thejus Rajendran
-</div>
-<motion.div
-  className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-thin"
-  animate={{ y: 0 }}
->
-  {word.map((letter, index) => {
-    return <motion.span key={index}>{letter}</motion.span>;
-  })}
-</motion.div>
-<div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">
-  designer
-</div>
-</div> */
-}
+// Middle Banner
