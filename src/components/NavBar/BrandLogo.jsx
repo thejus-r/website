@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
 export default function BrandLogo({ isOpen }) {
   const logoVariants = {
@@ -8,12 +8,13 @@ export default function BrandLogo({ isOpen }) {
     closed: {
       color: "#fff",
     },
-  };
+  }
   return (
-    <motion.div
+    <motion.a
       className="text-3xl font-bold p-4"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
+      href="/"
     >
       <motion.span
         variants={logoVariants}
@@ -23,6 +24,6 @@ export default function BrandLogo({ isOpen }) {
         tr
       </motion.span>
       <span className="text-red-500">.</span>
-    </motion.div>
-  );
+    </motion.a>
+  )
 }
