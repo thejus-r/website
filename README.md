@@ -9,6 +9,7 @@
 - add an element that help to understand to scroll below in larger screens
 - Creating a project template
 - fixed all black colors with neutral-800 in tailwind colors
+- fixed #13
 
 ## Technologies Used
 
