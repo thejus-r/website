@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
 const iconVarients = {
   initial: {
     rotate: 0,
-    backgroundColor: "#fff",
+    backgroundColor: "#000",
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
     },
@@ -12,7 +12,7 @@ const iconVarients = {
   openTop: {
     x: -5,
     y: 5,
-    backgroundColor: "#000",
+    backgroundColor: "#fff",
     rotate: 45,
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
@@ -21,13 +21,13 @@ const iconVarients = {
   openBottom: {
     x: -5,
     y: -5,
-    backgroundColor: "#000",
+    backgroundColor: "#fff",
     rotate: -45,
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
     },
   },
-};
+}
 
 export default function MenuButton({ toggleOpen, isOpen }) {
   return (
@@ -50,5 +50,5 @@ export default function MenuButton({ toggleOpen, isOpen }) {
         animate={isOpen ? "openBottom" : "initial"}
       ></motion.div>
     </motion.div>
-  );
+  )
 }

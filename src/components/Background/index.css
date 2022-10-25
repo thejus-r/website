@@ -1,8 +1,8 @@
 .graph-paper {
     z-index: -1;
-    background-color: rgba(41, 41, 41, 1);
+    background-color: rgb(255, 255, 255);
     background-size: 40px 40px;
-    background-image: radial-gradient(circle, #ffffff2c 1px, rgba(0, 0, 0, 0) 1px);
+    background-image: radial-gradient(circle, #49494965 1px, rgba(0, 0, 0, 0) 1px);
 }
 
 .blob {

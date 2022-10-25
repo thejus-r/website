@@ -8,11 +8,13 @@ const navBarVariants = {
     height: "96px",
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
+      staggerChildren: 0.2,
+      when: "beforeChildren",
     },
   },
   open: {
     height: "70vh",
-    backgroundColor: "#ffffff",
+    backgroundColor: "#262626",
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
       duration: 1,
@@ -71,7 +73,7 @@ export default function NavBar() {
         variants={navBarVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
-        className="w-screen sticky"
+        className="w-full top-0 absolute"
       >
         <div className="flex h-[96px] px-8 justify-between items-center">
           <BrandLogo isOpen={isOpen} />
@@ -80,7 +82,7 @@ export default function NavBar() {
 
         {isOpen && (
           <motion.div
-            className="text-5xl md:text-6xl lg:text-7xl text-center"
+            className=" text-white text-5xl md:text-6xl lg:text-7xl text-center"
             variants={dropDownVariants}
             initial="closed"
             animate="open"
