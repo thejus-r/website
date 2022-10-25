@@ -3,7 +3,7 @@ import Button from "../Button"
 
 export default function index() {
   const resumeLink =
-    "https://drive.google.com/file/d/1MSmu-79qc1l04d0MHVmdfh3707fpMngT/view?usp=sharing"
+    "https://firebasestorage.googleapis.com/v0/b/thejus-dev.appspot.com/o/Resume.pdf?alt=media&token=bac3a251-bc29-461f-9801-d514b06fbdd3"
   return (
     <>
       <motion.div
