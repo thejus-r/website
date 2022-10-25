@@ -2,6 +2,12 @@
 
 ## Change Logs
 
+### v0.3 (26th Oct 2022)
+
+- Updates to product component
+- can pass bgColor, title to the component
+- made the nav bar stickey
+
 ### v0.2 (25th Oct 2022)
 
 - Changed banner Text

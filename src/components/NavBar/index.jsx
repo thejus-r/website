@@ -73,7 +73,7 @@ export default function NavBar() {
         variants={navBarVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
-        className="w-full top-0 absolute"
+        className="w-full top-0 sticky"
       >
         <div className="flex h-[96px] px-8 justify-between items-center">
           <BrandLogo isOpen={isOpen} />
