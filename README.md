@@ -2,7 +2,7 @@
 
 ## Change Logs
 
-### v0.2 (25th Oct 2022)
+### v0.3 (26th Oct 2022)
 
 - Updates to product component
 - can pass bgColor, title to the component
