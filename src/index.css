@@ -5,22 +5,16 @@
 
 @layer base {
     body {
-        font-family: 'Chillax', sans-serif;
-        font-family: 'Clash Display', sans-serif;
-        overflow: hidden;
+        font-family: 'Satoshi', sans-serif;
+        background-color: #FCFCFC;
+        background-size: 40px 40px;
+        background-image: radial-gradient(circle, #49494965 1px, rgba(0, 0, 0, 0) 1px);
     }
+}
 
+
+@layer utilities {
     .view-port{
-        margin-top: 72px;
-    }
-
-    .cursor {
-        position:absolute;
-        height: 32px;
-        width: 32px;
-        border-radius: 100%;
-        background-color: blue;
-        pointer-events: none;
-        z-index: 100;
+        margin-top: 96px;
     }
 }

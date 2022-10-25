@@ -1,9 +1,14 @@
-import Banner from "../components/Banner"
+import Hero from "../components/Hero"
+import Projects from "../components/Projects"
 
 export default function HomePage() {
   return (
-    <div className="h-screen">
-      <Banner />;
+    <div>
+      <Hero />
+      <div className="text-6xl font-bold text-center">Featured Projects</div>
+      <Projects />
+      <Projects />
+      <Projects />
     </div>
   )
 }

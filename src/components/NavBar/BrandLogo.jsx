@@ -3,15 +3,15 @@ import { motion } from "framer-motion"
 export default function BrandLogo({ isOpen }) {
   const logoVariants = {
     open: {
-      color: "#000",
+      color: "#fff",
     },
     closed: {
-      color: "#fff",
+      color: "#000",
     },
   }
   return (
     <motion.a
-      className="text-3xl font-bold p-4"
+      className="font-['Chillax'] text-3xl font-bold p-4"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       href="/"
