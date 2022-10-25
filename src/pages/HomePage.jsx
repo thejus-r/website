@@ -5,7 +5,9 @@ export default function HomePage() {
   return (
     <div>
       <Hero />
-      <div className="text-6xl font-bold text-center">Featured Projects</div>
+      <div className="text-xl md:text-3xl xl:text-6xl font-bold text-center">
+        Featured Projects
+      </div>
       <Projects />
       <Projects />
       <Projects />

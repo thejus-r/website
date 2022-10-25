@@ -23,7 +23,7 @@ export default function index() {
         </motion.div>
         <h3 className="text-lg xl:text-4xl pt-6">User Experience Designer</h3>
       </div>
-      <div className="flex p-12 justify-end lg:justify-between  md:mx-32 mb-28">
+      <div className="flex p-12 justify-end lg:justify-between  md:mx-32 md:mb-28">
         <div className="hidden lg:block md:text-xl lg:text-2xl ">
           scroll down to discover
         </div>
