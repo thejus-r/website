@@ -6,6 +6,7 @@ import BrandLogo from "./BrandLogo"
 const navBarVariants = {
   closed: {
     height: "96px",
+    backgroundColor: "#ffffff",
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
       staggerChildren: 0.2,
