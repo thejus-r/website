@@ -8,9 +8,9 @@ export default function HomePage() {
       <div className="text-xl md:text-3xl xl:text-6xl font-bold text-center my-12 md:my-24">
         Featured Projects
       </div>
-      <Projects bgColor="#3553ba" title="InVois App" />
-      <Projects bgColor="#6dba80" title="Foodzie" />
-      <Projects bgColor="#cb3d3e" title="CineFlex" />
+      <Projects bgColor="bg-blue-900" title="InVois App" />
+      <Projects bgColor="bg-[#6dba80]" title="Foodzie" />
+      <Projects bgColor="bg-[#cb3d3e]" title="CineFlex" />
     </div>
   )
 }

@@ -8,7 +8,7 @@ export default function Projects({ bgColor, title }) {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
       href="https://www.google.com"
-      className={` md:m-12 h-[600px] p-8 md:p-12 bg-[${bgColor}] text-white grid lg:grid-cols-2`}
+      className={` md:m-12 h-[600px] p-8 md:p-12 ${bgColor} text-white grid lg:grid-cols-2`}
     >
       <div>
         <h4 className="text-3xl font-bold">{title}</h4>
