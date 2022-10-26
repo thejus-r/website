@@ -7,6 +7,8 @@
 - Updates to product component
 - can pass bgColor, title to the component
 - made the nav bar stickey
+- added icon animation for scroll icon on Desktop
+- removed grid pattern in body element
 
 ### v0.2 (25th Oct 2022)
 
