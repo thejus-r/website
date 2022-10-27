@@ -8,7 +8,7 @@ export default function Projects({ bgColor, title }) {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
       href="https://www.google.com"
-      className={` md:m-12 h-[600px] p-8 md:p-12 ${bgColor} text-white grid lg:grid-cols-2`}
+      className={` md:m-12  p-8 md:p-12 ${bgColor} text-white grid lg:grid-cols-2`}
     >
       <div>
         <h4 className="text-3xl font-bold">{title}</h4>
@@ -17,6 +17,13 @@ export default function Projects({ bgColor, title }) {
           eos nobis facere explicabo accusamus ad labore maiores fugiat autem
           quae tempora unde doloremque, non esse dolorem ipsum ea officiis!
         </p>
+      </div>
+      <div className="overflow-clip mt-8">
+        <img
+          alt="project 1"
+          src="assets/projects/project1.png"
+          className="object-cover mx-auto  shadow-lg"
+        ></img>
       </div>
     </motion.a>
   )
