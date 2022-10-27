@@ -2,6 +2,12 @@
 
 ## Change Logs
 
+### v0.4 (27th Oct 2022)
+
+- changes to product components
+- project components are now responsive.
+- added links to the case studies for each project
+
 ### v0.3 (26th Oct 2022)
 
 - Updates to product component
