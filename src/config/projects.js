@@ -1,35 +1,35 @@
-const projects = [
+const projectDetails = [
   {
-    title: "InVois App",
+    title: "InVois",
     decription:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem ducimus eos nobis facere explicabo accusamus ad labore maiores",
     type: "UI/UX",
-    mediumLink: "https://www.google.com",
+    mediumLink: "https://www.thejus.dev",
     bgColor: "bg-blue-800",
     image1: "assets//projects//project1.png",
     image2: "img1",
     image3: "img1",
   },
   {
-    title: "InVois App",
+    title: "Foodzie",
     decription: "Lorem",
     type: "UI/UX",
-    mediumLink: "https://www.google.com",
+    mediumLink: "https://www.thejus.dev",
     bgColor: "bg-green-500",
-    image1: "img1",
+    image1: "assets//projects//project1.png",
     image2: "img1",
     image3: "img1",
   },
   {
-    title: "InVois App",
+    title: "CineFlex",
     decription: "Lorem",
     type: "UI/UX",
-    mediumLink: "https://www.google.com",
+    mediumLink: "https://www.thejus.dev",
     bgColor: "bg-red-500",
-    image1: "img1",
+    image1: "assets//projects//project1.png",
     image2: "img1",
     image3: "img1",
   },
 ]
 
-export default projects
+export default projectDetails
