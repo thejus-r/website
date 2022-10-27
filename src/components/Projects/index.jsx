@@ -14,15 +14,14 @@ export default function Projects({ bgColor, title }) {
         <h4 className="text-3xl font-bold">{title}</h4>
         <p className="text-base md:text-lg lg:text-2xl mt-4">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem ducimus
-          eos nobis facere explicabo accusamus ad labore maiores fugiat autem
-          quae tempora unde doloremque, non esse dolorem ipsum ea officiis!
+          eos nobis facere explicabo accusamus ad labore maiores
         </p>
       </div>
       <div className="overflow-clip mt-8">
         <img
           alt="project 1"
           src="assets/projects/project1.png"
-          className="object-cover mx-auto  shadow-lg"
+          className="object-cover mx-auto  shadow-lg h-[400px] lg:h-[500]"
         ></img>
       </div>
     </motion.a>
