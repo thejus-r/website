@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import NavBar from "./components/NavBar"
 import AboutPage from "./pages/AboutPage"
-import ComingSoonPage from "./pages/ComingSoonPage"
+import ProjectsPage from "./pages/ProjectsPage"
 import HomePage from "./pages/HomePage"
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
-        <Route path="/projects" element={<ComingSoonPage />}></Route>
+        <Route path="/projects" element={<ProjectsPage />}></Route>
       </Routes>
     </>
   )
