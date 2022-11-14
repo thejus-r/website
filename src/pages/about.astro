@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../components/BaseLayout.astro"
+import SocialLinks from "../components/ShowCase/SocialLinks.astro"
+---
+
+<BaseLayout title="Thejus Rajendran | About">
+  <div
+    class="absolute top-0 left-0 flex flex-col h-screen w-screen justify-center lg:justify-start items-center lg:flex-row"
+  >
+    <div class="lg:m-24 w-32 md:w-60 lg:w-[500px]">
+      <img
+        class="object-contain rounded-md shadow-2xl"
+        src="/assets/images/thejus.jpg"
+        alt="Thejus Rajendran"
+      />
+    </div>
+    <div class="p-12">
+      <h1 class="font-bold text-xl lg:text-4xl text-center lg:text-start">
+        About Me
+      </h1>
+      <p
+        class="mt-6 lg:mt-12 text-sm lg:text-lg mb-8 lg:w-4/5 text-center lg:text-start"
+      >
+        A graduate of <span class="font-bold">
+          Computer Science and Engineering</span
+        >, who is passionate about developing digital products and experiences
+        for the ever growing users. I also do a bit of frontend development
+        using frameworks Svelte & React as a hobby.
+        <br />
+
+        To know more about me, check out my <a
+          class="underline"
+          href="https://drive.google.com/file/d/1MSmu-79qc1l04d0MHVmdfh3707fpMngT/view"
+          target="_blank">resume</a
+        >.
+      </p>
+
+      <SocialLinks />
+    </div>
+  </div>
+</BaseLayout>

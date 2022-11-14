@@ -1,0 +1,31 @@
+---
+import Tags from "./shared/Tags.astro"
+
+const { blog } = Astro.props
+---
+
+<div
+  class="flex flex-col lg:flex-row bg-white shadow-sm rounded-none md:rounded-xl"
+>
+  <div class="md:p-4">
+    <img
+      class="xl:w-[32vw] rounded-none md:rounded-xl"
+      src={blog.imgPath}
+      alt={blog.title}
+    />
+  </div>
+  <div class="p-6 flex flex-col justify-between">
+    <div>
+      <p>{blog.date} • {blog.timeToRead}</p>
+      <h2 class="font-bold text-xl">{blog.title}</h2>
+      <h4 class="text-base">{blog.excert}</h4>
+    </div>
+    <div class="flex justify-between mt-4">
+      <!-- <div><Tags tags={blog.tags} /></div> -->
+      <button
+        class="px-4 py-2 rounded-lg bg-stone-900 hover:bg-stone-800 text-white"
+        ><a href={`blogs/${blog.slug}`}>Read More</a>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+---
+import BlogLayout from "../../components/Layouts/BlogLayout.astro"
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob("./posts/**/*.md")
+
+  return posts.map((post) => ({
+    params: {
+      slug: post.frontmatter.slug,
+    },
+    props: {
+      post,
+    },
+  }))
+}
+
+const { Content, frontmatter } = Astro.props.post
+---
+
+<BlogLayout blog={frontmatter}>
+  <article class="prose prose-sm lg:prose-xl">
+    <Content />
+  </article>
+</BlogLayout>

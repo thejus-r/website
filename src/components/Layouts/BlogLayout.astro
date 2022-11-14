@@ -1,0 +1,54 @@
+---
+import Footer from "../Footer/Footer.astro"
+import NavBarWrapper from "../NavBar/NavBarWrapper.astro"
+export interface props {
+  title?: String
+  subTitle?: String
+  imgPath?: String
+}
+
+const { blog } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{blog.title}</title>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-stone-100 h-screen w-screen">
+    <NavBarWrapper />
+    <div class="flex flex-col md:mx-12 lg:mx-20">
+      <div class="bg-white p-8 md:p-12 lg:p-20 shadow-sm rounded-lg mb-24">
+        <div>
+          <div class="flex flex-col justify-end space-y-2 md:space-y-4">
+            <h6
+              class="text-stone-500 font-bold text-xs sm:text-base lg:text-lg"
+            >
+              {blog.date} • {blog.timeToRead}
+            </h6>
+            <h1 class="font-bold text-lg md:text-3xl lg:text-5xl">
+              {blog.title}
+            </h1>
+            <h2 class="text-sm md:text-xl lg:text-2xl">{blog.subTitle}</h2>
+          </div>
+          <br />
+          <img
+            class="rounded-md w-[900px]"
+            src={blog.imgPath}
+            alt={blog.title}
+          />
+          <br />
+          <slot />
+        </div>
+      </div>
+    </div>
+    <Footer />
+  </body>
+</html>

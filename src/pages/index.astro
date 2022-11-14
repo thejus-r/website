@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../components/BaseLayout.astro"
+import Greetings from "../components/ShowCase/Greetings.astro"
+import ResumeButton from "../components/ShowCase/ResumeButton.astro"
+import SocialLinks from "../components/ShowCase/SocialLinks.astro"
+---
+
+<BaseLayout>
+  <div
+    class="select-none flex text-sm md:text-2xl flex-col md:h-64 mt-24 md:mt-36 justify-end"
+  >
+    <Greetings />
+    <h2 class="mt-12 lg:mt-16">
+      I’m a Kerala-based digital <span class="font-semibold"
+        >Product Designer</span
+      >
+    </h2>
+    <h2 class="">
+      Focusing on developing delightful experiences for end-users and
+      businesses.
+    </h2>
+  </div>
+  <div class="mt-32 lg:mt-12 flex flex-col gap-20 lg:gap-12">
+    <SocialLinks />
+    <ResumeButton />
+  </div>
+</BaseLayout>

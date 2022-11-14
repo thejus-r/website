@@ -1,0 +1,23 @@
+---
+import BlogCard from "../../components/BlogCard.astro"
+import Layout from "../../components/Layouts/Layout.astro"
+
+const blogs = await Astro.glob("./posts/**/*.md")
+---
+
+<Layout title="Thejus Rajendran | Blogs">
+  <h1
+    class="text-center sm:text-left mt-0 md:mt-12 md:mx-0 font-bold text-4xl m-12"
+  >
+    Blogs
+  </h1>
+  <div class="grid 2xl:grid-cols-2 gap-6">
+    {
+      blogs.map((blog) => (
+        <div>
+          <BlogCard blog={blog.frontmatter} />
+        </div>
+      ))
+    }
+  </div>
+</Layout>

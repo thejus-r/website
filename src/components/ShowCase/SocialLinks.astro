@@ -1,0 +1,32 @@
+---
+const links = [
+  {
+    site: "LinkedIn",
+    url: "https://www.linkedin.com/in/thejus-r/",
+  },
+  {
+    site: "Behance",
+    url: "https://www.behance.net/thejus-r",
+  },
+  {
+    site: "Dribbble",
+    url: "https://dribbble.com/thejus-r",
+  },
+  {
+    site: "Github",
+    url: "https://github.com/thejus-r",
+  },
+]
+---
+
+<div
+  class="flex font-bold tracking-wider text-xs space-x-4 lg:space-x-8 uppercase"
+>
+  {
+    links.map((link) => (
+      <a target="_blank" href={link.url}>
+        {link.site}
+      </a>
+    ))
+  }
+</div>

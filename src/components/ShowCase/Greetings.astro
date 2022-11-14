@@ -1,0 +1,35 @@
+---
+const words = [
+  "Hello",
+  "Vanakam",
+  "Namaskaram",
+  "Namaste",
+  "Kon'nichiwa",
+  "Annyeonghaseyo",
+]
+---
+
+<div class="font-bold text-2xl md:text-4xl">
+  {
+    words.map((word, index) => (
+      <div class={`greeting float-left absolute ${"div" + index.toString()}`}>
+        {word},
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  import { timeline } from "motion"
+
+  const sequence: any = [
+    [".div0", { opacity: [0, 1, null, 1, 0] }, { duration: 2.5 }],
+    [".div1", { opacity: [0, 1, null, 1, 0] }, { duration: 2.5 }],
+    [".div2", { opacity: [0, 1, null, 1, 0] }, { duration: 2.5 }],
+    [".div3", { opacity: [0, 1, null, 1, 0] }, { duration: 2.5 }],
+    [".div4", { opacity: [0, 1, null, 1, 0] }, { duration: 2.5 }],
+    [".div5", { opacity: [0, 1, null, 1, 0] }, { duration: 2.5 }],
+    [".div6", { opacity: [0, 1, null, 1, 0] }, { duration: 2.5 }],
+  ]
+  timeline(sequence, { repeat: Infinity })
+</script>
