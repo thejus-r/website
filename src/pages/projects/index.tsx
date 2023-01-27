@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 
 export default function CaseStudiesPage() {
-    return <>
+    return <>``
         <Head>
             <title>Projects</title>
         </Head>
