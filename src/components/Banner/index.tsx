@@ -1,43 +1,46 @@
-import { motion, Variants } from 'framer-motion'
+import { motion, Variants, MotionConfig } from "framer-motion";
 
-const parentVariants: Variants = {
-    hidden: {
-        y: 0
+const EASE = [0.32, 0.72, 0, 1];
+
+const parentVarients: Variants = {
+    "hidden": {
+        opacity: 0,
+        y: 50
     },
-    visible: {
+    "visible": {
         y: 0,
+        opacity: 1,
         transition: {
-            duration: 0.3,
-            when: "beforeChildren",
-            staggerChildren: 0.2
+            staggerChildren: 0.3,
+            when: "beforeChildren"
         }
     }
 }
-
-const childrenVariants: Variants = {
-    hidden: {
-        y: 200
+const childrenVarients: Variants = {
+    "hidden": {
+        opacity: 0,
+        y: 50
     },
-    visible: {
+    "visible": {
         y: 0,
-        transition: {
-            ease: [0.32, 0.72, 0, 1],
-            duration: 0.6
-        }
+        opacity: 1
     }
 }
 
-export default function NavBar() {
-    return <section>
-        <div className="md:mt-96">
-        </div>
-        <motion.div variants={parentVariants} initial="hidden" animate="visible" className="absolute text-xl md:text-5xl  font-bold top-[30vh] md:top-[40vh] w-full text-center flex flex-col">
-            <div className='overflow-hidden md:pb-2 md:mb-2'>
-                <motion.h1 variants={childrenVariants}>Designing experiences</motion.h1>
-            </div>
-            <div className='overflow-hidden md:pb-2 md:mb-2'>
-                <motion.h1 variants={childrenVariants}>that connect users to the digital world</motion.h1>
-            </div>
-        </motion.div>
-    </section>
+
+
+const Banner = () => {
+    return <MotionConfig transition={{ ease: EASE, duration: 0.5 }}>
+        <motion.section variants={parentVarients} initial='hidden' animate="visible" className='md:h-72 md:px-12 flex flex-col justify-end space-y-8'>
+            <motion.div variants={childrenVarients} className='text-xl md:text-4xl font-black md:max-w-2xl'>
+                <h1>Thejus is an user experience designer aspirant currently looking for a full time job.</h1>
+            </motion.div>
+            <motion.div variants={childrenVarients} >
+                <p className="text-base font-bold text-stone-400">Currently in</p>
+                <p className="text-base font-bold text-stone-900">Kollam, Kerala</p>
+            </motion.div>
+        </motion.section>
+    </MotionConfig>
 }
+
+export default Banner;

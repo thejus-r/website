@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap" rel="stylesheet"></link>
       </Head>
-      <body>
+      <body className='bg-stone-100 text-stone-900'>
         <Main />
         <NextScript />
       </body>
