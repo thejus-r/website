@@ -30,10 +30,10 @@ const childrenVarients: Variants = {
 
 
 const Banner = () => {
-    return <MotionConfig transition={{ ease: EASE, duration: 0.5 }}>
+    return <MotionConfig transition={{ ease: EASE, duration: 1.2 }}>
         <motion.section variants={parentVarients} initial='hidden' animate="visible" className='md:h-72 md:px-12 flex flex-col justify-end space-y-8'>
             <motion.div variants={childrenVarients} className='text-xl md:text-4xl font-black md:max-w-2xl'>
-                <h1>Thejus is an user experience designer aspirant currently looking for a full time job.</h1>
+                <h1>Thejus is an aspirant user experience designer, seeking for full-time position right now.</h1>
             </motion.div>
             <motion.div variants={childrenVarients} >
                 <p className="text-base font-bold text-stone-400">Currently in</p>

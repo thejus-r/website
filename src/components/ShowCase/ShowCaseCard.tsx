@@ -10,15 +10,15 @@ const EASE = [0.32, 0.72, 0, 1];
 const parentVariants: Variants = {
     "initial": {
         opacity: 0,
-        y: 110
+        y: 50
     },
     "animate": {
         opacity: 1,
         transition: {
             when: "beforeChildren",
-            delay: 1.2,
+            delay: 2,
             ease: [0.32, 0.72, 0, 1],
-            duration: 0.5
+            duration: 1.2,
         },
         y: 0
     },
@@ -74,20 +74,20 @@ function ShowCaseCard(props: Project) {
 
     return <Link href={slug}>
         <MotionConfig transition={{ ease: EASE }}>
-            <motion.div variants={parentVariants} initial="initial" animate="animate" whileHover="hover" className="relative text-white h-96 rounded-2xl overflow-hidden">
+            <motion.div variants={parentVariants} initial="initial" animate="animate" whileHover="hover" className="relative text-white h-[450px] rounded-2xl overflow-hidden">
                 <motion.div variants={imageVariants} className="absolute h-full w-full">
                     <Image loading="lazy" className="object-cover absolute" fill src={imgPath} alt={title} />
                 </motion.div>
                 <motion.div variants={backdropVariants} className="bg-black/40 backdrop-blur-lg h-full w-full absolute inset-0" />
                 <motion.div className="p-6 sm:p-8 flex flex-col justify-end h-full space-y-1.5">
                     <motion.div variants={detailsVariants}>
-                        <div className="bg-white/40 rounded-full px-2 py-0.5 w-fit shadow-xl mb-2">
+                        <div className="bg-white/40 rounded-full px-2 py-0.5 w-fit shadow-xl mb-0.5 sm:mb-2">
                             <p className="text-xs tracking-wider mix font-black uppercase shadow-sm">{type}</p>
                         </div>
-                        <h3 className="text-3xl font-bold  w-fit shadow-xl">{title}</h3>
+                        <h3 className="text-3xl font-bold  w-fit">{title}</h3>
                     </motion.div>
                     <motion.div variants={descVariants}>
-                        <p className="font-medium leading-5 opacity-80  md:max-w-xl">{desc}</p>
+                        <p className="font-medium leading-5 opacity-80 md:max-w-xl">{desc}</p>
                         <div className="hidden sm:block mt-4 font-bold">
                             View Project
                         </div>
