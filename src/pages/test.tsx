@@ -1,10 +1,45 @@
-import Image from "next/image"
-import { motion } from 'framer-motion'
+import { motion, Variants } from "framer-motion";
+
+const parentVariant: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const childrenVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+  },
+};
 
 export default function Test() {
-    const d = new Date("2023-01-28")
-    console.log(d)
-    return <main className="p-12 flex flex-col gap-8">
-        <h1 className="text-2xl font-bold"></h1>
-    </main>
+  return (
+    <motion.div
+      variants={parentVariant}
+      initial="hidden"
+      animate="show"
+      className="flex flex-col gap-4 p-4"
+    >
+      <Children index={1} />
+      <Children index={2} />
+      <Children index={3} />
+    </motion.div>
+  );
+}
+
+function Children({ index }: { index: number }) {
+  return (
+    <motion.div
+      variants={childrenVariants}
+      className="p-6 w-full h-24 bg-red-500 text-white"
+    >
+      Child {index}
+    </motion.div>
+  );
 }
