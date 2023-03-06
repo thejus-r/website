@@ -38,7 +38,7 @@ const Banner = () => {
       >
         <motion.div
           variants={childrenVarients}
-          className="text-xl md:text-4xl font-black md:max-w-2xl"
+          className="text-xl md:text-4xl font-black md:max-w-3xl"
         >
           <h1>
             Thejus is an aspirant Front-end Engineer, seeking for full-time
