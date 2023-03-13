@@ -14,7 +14,7 @@ const projects: Project[] = [
     title: "Tic-Tac-Toe",
     type: "Web App",
     desc: "A simple tic-tac-toe web game build with ReactJS and TailwindCSS, while exploring libraries such as Zustand, framer-motion, etc",
-    imgPath: "/images/tic-tac-toe/banner.png",
+    imgPath: "/images/tic-tac-toe/banner1.png",
     slug: "https://github.com/thejus-r/tic-tac-toe",
     dateCreated: "2023-03-06",
     public: true,
