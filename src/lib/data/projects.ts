@@ -15,7 +15,7 @@ const projects: Project[] = [
     type: "Design",
     desc: "A small case-study on how we can implement a modern experience for easier food exploration based on users prefererance and dieatary restrictions",
     imgPath: "/images/cecify/banner.png",
-    slug: "https://medium.com/@thejusr/scout-app-case-study-9b992d9385b4",
+    slug: "https://www.behance.net/gallery/150723417/CECify-Season-2-%282021%29-Rebranding",
     dateCreated: "2023-03-15",
     public: true,
   },
