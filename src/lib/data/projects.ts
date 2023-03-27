@@ -7,7 +7,16 @@ const projects: Project[] = [
     desc: "A small case-study on how we can implement a modern experience for easier food exploration based on users prefererance and dieatary restrictions",
     imgPath: "/images/scout/banner.png",
     slug: "https://medium.com/@thejusr/scout-app-case-study-9b992d9385b4",
-    dateCreated: "2023-01-12",
+    dateCreated: "2023-03-16",
+    public: true,
+  },
+  {
+    title: "CECify Radio",
+    type: "Design",
+    desc: "A small case-study on how we can implement a modern experience for easier food exploration based on users prefererance and dieatary restrictions",
+    imgPath: "/images/cecify/banner.png",
+    slug: "https://medium.com/@thejusr/scout-app-case-study-9b992d9385b4",
+    dateCreated: "2023-03-16",
     public: true,
   },
   {
