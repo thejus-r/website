@@ -11,16 +11,16 @@ const links: Link[] = [
     url: "https://www.linkedin.com/in/thejus-r/",
   },
   {
-    site: "Github",
-    url: "https://github.com/thejus-r",
-  },
-  {
     site: "Medium",
     url: "https://thejusr.medium.com/",
   },
   {
     site: "Behance",
     url: "https://www.behance.net/thejus-r",
+  },
+  {
+    site: "Github",
+    url: "https://github.com/thejus-r",
   },
 ];
 
