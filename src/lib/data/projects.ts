@@ -13,7 +13,7 @@ const projects: Project[] = [
   {
     title: "CECify Radio",
     type: "Design",
-    desc: "A small case-study on how we can implement a modern experience for easier food exploration based on users prefererance and dieatary restrictions",
+    desc: "A complete design and branding of a college student initiative. From social media campaigns to motion graphics.",
     imgPath: "/images/cecify/banner.png",
     slug: "https://www.behance.net/gallery/150723417/CECify-Season-2-%282021%29-Rebranding",
     dateCreated: "2023-03-15",
