@@ -38,11 +38,18 @@ const Banner = () => {
       >
         <motion.div
           variants={childrenVarients}
-          className="text-xl md:text-4xl font-black md:max-w-3xl"
+          className="text-xl leading-relaxed md:text-4xl font-black md:max-w-3xl"
         >
           <h1>
-            Thejus is an aspirant Product Designer, seeking for full-time
-            position right now.
+            Thejus is now designing digital experiences across multiple clients,
+            at{" "}
+            <a
+              href="https://flooid.in"
+              target="blank"
+              className="underline hover:brightness-75 transition-all duration-300 underline-offset-4 text-[#ec6964]"
+            >
+              flooid.in{" "}
+            </a>
           </h1>
         </motion.div>
         <motion.div variants={childrenVarients}>
