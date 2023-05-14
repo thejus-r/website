@@ -47,7 +47,9 @@ const Banner = () => {
         </motion.div>
         <motion.div variants={childrenVarients}>
           <p className="text-base font-bold text-stone-400">Currently in</p>
-          <p className="text-base font-bold text-stone-900">Kollam, Kerala</p>
+          <p className="text-base font-bold text-stone-900">
+            Bengaluru, Karnataka
+          </p>
         </motion.div>
       </motion.section>
     </MotionConfig>
