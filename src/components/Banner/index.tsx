@@ -41,8 +41,7 @@ const Banner = () => {
           className="text-xl leading-relaxed md:text-4xl font-black md:max-w-3xl"
         >
           <h1>
-            Thejus is now designing digital experiences across multiple clients,
-            at{" "}
+            Thejus is now designing digital experiences for multiple clients, at{" "}
             <a
               href="https://flooid.in"
               target="blank"
