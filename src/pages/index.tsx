@@ -25,7 +25,7 @@ const Home: NextPage = ({
         <title>Thejus Rajendran</title>
         <meta
           name="description"
-          content="Portfolio website of Thejus Rajendran who is an UI Engineer"
+          content="Portfolio website of Thejus Rajendran who is an UI/UX Designer"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
