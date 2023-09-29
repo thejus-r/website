@@ -1,6 +1,6 @@
-import { PathToCrumbs } from "@/Utils/PathToCrumbs";
+import { PathToCrumbs } from "@/utils/PathToCrumbs";
 
-const crumbs = PathToCrumbs();
+const crumbs = PathToCrumbs("/");
 
 export default function BreadCrumbs() {
   return (
