@@ -1,13 +1,12 @@
-const currentRoute = ["home", "case-study", "scout"];
+import { PathToCrumbs } from "@/Utils/PathToCrumbs";
+
+const crumbs = PathToCrumbs();
 
 export default function BreadCrumbs() {
   return (
-    <div className="text-xl flex gap-2">
-      {currentRoute.map((slug, index) => (
-        <>
-          <div key={index}>{slug}</div>
-          {index != currentRoute.length - 1 && <div>/</div>}
-        </>
+    <div className="text-xl flex gap-4">
+      {crumbs.map((crumb, index) => (
+        <div key={index}>{crumb}</div>
       ))}
     </div>
   );

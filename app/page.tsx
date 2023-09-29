@@ -1,5 +1,6 @@
 "use client";
-// import HelloWorld from "./hello.mdx";
+
+import BreadCrumbs from "@/components/BreadCrumbs";
 
 export default function Home() {
   return (
@@ -17,7 +18,3 @@ export default function Home() {
     </main>
   );
 }
-
-// <article className="prose prose-stone prose-invert">
-//   <HelloWorld />
-// </article>

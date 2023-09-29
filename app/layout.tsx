@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import Footer from "@/components/Footer";
 import { Metadata } from "next";
 import BreadCrumbs from "@/components/BreadCrumbs";
-
 export const metadata: Metadata = {
   title: "Thejus Rajendran | Product Designer",
   description:
@@ -38,7 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={satoshi.className}>
-      <body className="bg-stone-900 text-stone-50">
+      <body className="bg-stone-900 text-stone-50 subpixel-antialiased">
         <NavBar />
         <BreadCrumbs />
         {children}
