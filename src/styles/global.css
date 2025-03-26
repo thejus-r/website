@@ -1,22 +1,22 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @font-face {
-  font-family: Geist;
+  font-family: "Satoshi";
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url("/fonts/Geist.woff2") format("woff2");
+  src: url("/fonts/satoshi.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: GeistMono;
-  font-style: normal;
+  font-family: "Satoshi Italic";
+  font-style: italic;
   font-weight: 100 900;
   font-display: swap;
-  src: url("/fonts/GeistMono.woff2") format("woff2");
+  src: url("/fonts/satoshi-italic.woff2") format("woff2");
 }
 
 @theme {
-  --font-sans: "Geist", sans-serif;
-  --font-mono: "GeistMono", monospace;
+  --font-sans: "Satoshi", "Satoshi Italic", sans-serif;
 }
