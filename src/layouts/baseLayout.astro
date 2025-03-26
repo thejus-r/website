@@ -1,22 +1,21 @@
 ---
-import "../styles/global.css"
-import Analytics from '@vercel/analytics/astro'
+import { imageConfig } from "astro:assets";
+import "../styles/global.css";
+import Analytics from "@vercel/analytics/astro";
+import NavBar from "../components/NavBar.astro";
+import BaseHead from "../components/BaseHead.astro";
 ---
-
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" href="/fonts/Geist.woff2" as="font" type="font/woff2" crossorigin/>
-    <link rel="preload" href="/fonts/GeistMono.woff2" as="font" type="font/woff2" crossorigin/>
+    <BaseHead title="Thejus Rajendran" description="My Website" />
     <meta name="generator" content={Astro.generator} />
     <title>Thejus Rajendran</title>
   </head>
-  <body class="h-screen w-screen subpixel-antialiased">
+  <body class="h-screen w-screen subpixel-antialiased flex">
+    <NavBar />
     <slot />
-    <Analytics/>
+    <Analytics />
   </body>
 </html>
