@@ -1,5 +1,10 @@
-import home from "@assets/home.svg";
-import blog from "@assets/writing.svg";
+import home from "@assets/icons/home.svg";
+import blog from "@assets/icons/writing.svg";
+import resume from "@assets/icons/better-resume.svg";
+import social from "@assets/icons/bloom-book.svg";
+import x from "@assets/icons/x.svg";
+import linkedin from "@assets/icons/linkedin.svg";
+import github from "@assets/icons/github.svg";
 
 const routes = [
   {
@@ -22,13 +27,13 @@ const routes = [
     links: [
       {
         name: "Better Resume",
-        href: "/blog/bloom-book",
-        icon: home,
+        href: "https://github.com/thejus-r/better-resume",
+        icon: resume,
       },
       {
-        name: "Bloom Books",
-        href: "/blog/bloom-book",
-        icon: home,
+        name: "Social API",
+        href: "https://github.com/thejus-r/social",
+        icon: social,
       },
     ],
   },
@@ -38,17 +43,17 @@ const routes = [
       {
         name: "LinkedIn",
         href: "https://www.linkedin.com/in/thejus-r/",
-        icon: home,
+        icon: linkedin,
       },
       {
         name: "Github",
         href: "https://github.com/thejus-r",
-        icon: home,
+        icon: github,
       },
       {
         name: "Twitter",
         href: "https://x.com/ThejusRajendran",
-        icon: home,
+        icon: x,
       },
     ],
   },
