@@ -1,21 +1,20 @@
 ---
-import { imageConfig } from "astro:assets";
 import "../styles/global.css";
 import Analytics from "@vercel/analytics/astro";
-import NavBar from "../components/NavBar.astro";
+import Nav from "../components/Nav.astro";
 import BaseHead from "../components/BaseHead.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <BaseHead title="Thejus Rajendran" description="My Website" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Thejus Rajendran</title>
-  </head>
-  <body class="h-screen w-screen subpixel-antialiased flex">
-    <NavBar />
-    <slot />
-    <Analytics />
-  </body>
+    <head>
+        <BaseHead title="Thejus Rajendran" description="My Website" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Thejus Rajendran</title>
+    </head>
+    <body class="h-screen w-screen subpixel-antialiased flex">
+        <Nav />
+        <slot />
+        <Analytics />
+    </body>
 </html>

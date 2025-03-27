@@ -1,0 +1,21 @@
+---
+import NavDivider from "./ui/NavDivider.astro";
+import NavLink from "./ui/NavLink.astro";
+import { routes } from "../config/routes";
+---
+
+<nav>
+  <!-- Desktop Navigation -->
+  <div class="w-64 bg-neutral-100 h-full p-4">
+    {
+      routes.map(({ group, links }) => (
+        <div>
+          <NavDivider key={group}>{group}</NavDivider>
+          {links.map(({ name, ...props }) => (
+            <NavLink {...props}>{name}</NavLink>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</nav>
