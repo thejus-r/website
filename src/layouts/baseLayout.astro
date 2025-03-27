@@ -7,14 +7,16 @@ import BaseHead from "../components/BaseHead.astro";
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <BaseHead title="Thejus Rajendran" description="My Website" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Thejus Rajendran</title>
-    </head>
-    <body class="h-screen w-screen subpixel-antialiased flex">
-        <Nav />
-        <slot />
-        <Analytics />
-    </body>
+  <head>
+    <BaseHead title="Thejus Rajendran" description="My Website" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Thejus Rajendran</title>
+  </head>
+  <body
+    class="md:h-screen w-screen subpixel-antialiased flex flex-col md:flex-row"
+  >
+    <Nav />
+    <slot />
+    <Analytics />
+  </body>
 </html>

@@ -16,18 +16,23 @@ const isExternalLink = !href.startsWith("/");
 <a
   href={href}
   class:list={[
-    "rounded-xl w-full items-center text-sm bg-neutral-100 text-neutral-800 p-2 flex gap-1.5 hover:brightness-95",
+    "rounded-xl w-full items-center text-sm bg-neutral-100 text-neutral-800 p-3 md:p-2 flex gap-1.5 hover:brightness-95",
     { "bg-white hover:brightness-100": isActive },
   ]}
   {...props}
 >
   <div class="flex gap-2 flex-1">
-    <Image height={"16"} src={icon} alt={"home"} />
+    <Image loading="eager" height={"16"} src={icon} alt={"home"} />
     <slot />
   </div>
   {
     isExternalLink && (
-      <Image width={16} src={externalLinkIcon} alt={"external link icon"} />
+      <Image
+        loading="eager"
+        width={16}
+        src={externalLinkIcon}
+        alt={"external link icon"}
+      />
     )
   }
 </a>

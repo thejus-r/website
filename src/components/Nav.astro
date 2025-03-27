@@ -2,14 +2,19 @@
 import NavDivider from "./ui/NavDivider.astro";
 import NavLink from "./ui/NavLink.astro";
 import { routes } from "../config/routes";
+import { Image } from "astro:assets";
+import closeIcon from "@assets/icons/close.svg";
+import menuIcon from "@assets/icons/menu.svg";
 ---
 
 <nav>
   <!-- Desktop Navigation -->
-  <div class="w-64 bg-neutral-100 h-full p-4">
+  <div
+    class="w-64 hidden md:flex flex-col justify-center bg-neutral-100 h-full p-4"
+  >
     {
       routes.map(({ group, links }) => (
-        <div>
+        <div class="flex flex-col gap-2">
           <NavDivider key={group}>{group}</NavDivider>
           {links.map(({ name, ...props }) => (
             <NavLink {...props}>{name}</NavLink>
@@ -17,5 +22,32 @@ import { routes } from "../config/routes";
         </div>
       ))
     }
+  </div>
+  <!-- Mobile Navigation -->
+  <div
+    x-data="{ expanded: false }"
+    class="fixed flex flex-col w-full h-auto top-0 md:hidden bg-neutral-100 border-b border-b-neutral-200 p-4"
+  >
+    <div class="w-full flex justify-between items-center">
+      <h3>
+        <a href="/">Thejus Rajendran</a>
+      </h3>
+      <button @click="expanded = !expanded">
+        <Image x-show="expanded" src={closeIcon} alt="close" width={20} />
+        <Image x-show="!expanded" src={menuIcon} alt="close" width={20} />
+      </button>
+    </div>
+    <div x-show="expanded" x-transition class="mt-4 transition-transform">
+      {
+        routes.map(({ group, links }) => (
+          <div class="flex flex-col gap-2">
+            <NavDivider key={group}>{group}</NavDivider>
+            {links.map(({ name, ...props }) => (
+              <NavLink {...props}>{name}</NavLink>
+            ))}
+          </div>
+        ))
+      }
+    </div>
   </div>
 </nav>
