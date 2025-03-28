@@ -1,0 +1,36 @@
+---
+type Props = {
+    role: string;
+    company: string;
+    fromDate: Date;
+    toDate: Date;
+};
+const { role, company, fromDate, toDate } = Astro.props;
+---
+
+<div class="w-full flex flex-col gap-1">
+    <div class="flex items-center gap-2">
+        <h3>{role}</h3>
+        <hr class="flex-1 border border-neutral-100" />
+        <p class="font-mono text-sm text-neutral-400">{company}</p>
+    </div>
+    <p class="text-sm text-neutral-400">
+        {
+            fromDate.toLocaleDateString("en-US", {
+                year: "2-digit",
+                month: "short",
+            })
+        }
+        - {
+            toDate.toLocaleDateString("en-US", {
+                year: "2-digit",
+                month: "short",
+            })
+        }
+        <span class="font-mono"
+            >({toDate.getFullYear() - fromDate.getFullYear()}y {
+                toDate.getMonth() - fromDate.getMonth()
+            }m)</span
+        >
+    </p>
+</div>
