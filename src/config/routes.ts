@@ -64,7 +64,7 @@ const routes = [
       },
       {
         name: "Bluesky",
-        href: "https://x.com/ThejusRajendran",
+        href: "https://bsky.app/profile/thejus-r.bsky.social",
         icon: bluesky,
       },
     ],
