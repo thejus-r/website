@@ -1,14 +1,16 @@
-import home from "@assets/icons/home.svg";
-import blog from "@assets/icons/writing.svg";
 import resume from "@assets/icons/better-resume.svg";
 import social from "@assets/icons/bloom-book.svg";
-import x from "@assets/icons/x.svg";
-import linkedin from "@assets/icons/linkedin.svg";
+import game from "@assets/icons/game.svg";
 import github from "@assets/icons/github.svg";
+import home from "@assets/icons/home.svg";
+import linkedin from "@assets/icons/linkedin.svg";
+import tasks from "@assets/icons/tasks.svg";
+import blog from "@assets/icons/writing.svg";
+import bluesky from "@assets/icons/bluesky.svg";
 
 const routes = [
   {
-    group: "Navigation",
+    group: "Me",
     links: [
       {
         name: "Home",
@@ -16,7 +18,7 @@ const routes = [
         icon: home,
       },
       {
-        name: "Writtings",
+        name: "Writings",
         href: "/blog",
         icon: blog,
       },
@@ -35,6 +37,16 @@ const routes = [
         href: "https://github.com/thejus-r/social",
         icon: social,
       },
+      {
+        name: "Tic Tac Toe",
+        href: "https://tic-tac-toe-steel-phi.vercel.app",
+        icon: game,
+      },
+      {
+        name: "Tasky",
+        href: "https://github.com/thejus-r/tasky",
+        icon: tasks,
+      },
     ],
   },
   {
@@ -51,9 +63,9 @@ const routes = [
         icon: github,
       },
       {
-        name: "Twitter",
+        name: "Bluesky",
         href: "https://x.com/ThejusRajendran",
-        icon: x,
+        icon: bluesky,
       },
     ],
   },
