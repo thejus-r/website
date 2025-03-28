@@ -1,17 +1,23 @@
 ---
+import BlogCard from "@components/BlogCard.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-const posts = await getCollection('blog')
+const posts = await getCollection("blog");
 ---
 
 <BaseLayout>
-  <div>
-    <h1>My Posts</h1>
-    <ul>
-    {posts.map(post => (
-      <li><a href={`/blog/${post.id}`}>{post.data.title}</a></li>
-    ))}
+  <main class="pt-16 p-4 max-w-[680px] md:mx-auto">
+    <h2 class="text-sm text-neutral-600 font-semibold mt-4 mb-4">
+      // writings
+    </h2>
+    <ul class="text">
+      {
+        posts.map((post) => (
+          <li>
+            <BlogCard post={post} />
+          </li>
+        ))
+      }
     </ul>
-  </div>
+  </main>
 </BaseLayout>
-
