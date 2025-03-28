@@ -8,7 +8,7 @@ type Props = {
 const { name, href, date } = Astro.props;
 ---
 
-<a href={href} class="flex gap-2 w-full items-center group">
+<a href={href} target="_blank" class="flex gap-2 w-full items-center group">
     <span
         class="text-neutral-800 group-hover:text-blue-600 group-hover:underline underline-offset-2 block"
         >{name}</span
