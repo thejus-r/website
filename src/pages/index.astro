@@ -1,109 +1,107 @@
 ---
 import Link from "@components/ui/Link.astro";
-import Layout from "../layouts/BaseLayout.astro";
+import Layout from "@layouts/BaseLayout.astro";
 import SocialLink from "@components/ui/SocialLink.astro";
 import ProjectCard from "@components/ui/ProjectCard.astro";
 import WorkCard from "@components/ui/WorkCard.astro";
 ---
 
 <Layout>
-    <div
-        class="w-full text-neutral-700 md:max-w-[640px] mx-auto mt-20 mb-16 flex-1 flex flex-col gap-4 p-4 text-pretty"
-    >
-        <p>
-            Hey, I'm Thejus. I'm a designer & <a
-                class="text-blue-600 hover:underline underline-offset-2"
-                href="https://github.com/thejus-r"
-                target="_blank">software engineer</a
-            >. I am currently looking for opportunities as a Full Stack
-            Engineer.
-        </p>
-        <p>
-            Before this, I got my first strip as an experience designer at
-            <a
-                href="https://www.flooid.in"
-                target="_blank"
-                class="text-blue-600 hover:underline underline-offset-2"
-                >Flooid (a product studio in Bengaluru)</a
-            > where I got to work with clients such as Microsoft, Herkey, Valuequest,
-            Astrosure.ai, etc.
-        </p>
-        <p>
-            I left my experience design role in October 2024 to become a
-            developer.
-        </p>
+  <div
+    class="w-full text-neutral-700 md:max-w-[640px] mx-auto mt-20 mb-16 flex-1 flex flex-col gap-4 p-4 text-pretty"
+  >
+    <p>
+      Hey, I'm Thejus. I'm a designer & <a
+        class="text-blue-600 hover:underline underline-offset-2"
+        href="https://github.com/thejus-r"
+        target="_blank">software engineer</a
+      >. I am currently looking for opportunities as a Full Stack Engineer.
+    </p>
+    <p>
+      Before this, I got my first strip as an experience designer at
+      <a
+        href="https://www.flooid.in"
+        target="_blank"
+        class="text-blue-600 hover:underline underline-offset-2"
+        >Flooid (a product studio in Bengaluru)</a
+      > where I got to work with clients such as Microsoft, Herkey, Valuequest, Astrosure.ai,
+      etc.
+    </p>
+    <p>
+      I left my experience design role in October 2024 to become a developer.
+    </p>
 
-        <div>
-            <h3 class="text-neutral-400 mt-4 mb-2">// socials</h3>
-            <ul class="flex flex-col gap-2">
-                <li class="flex items-center gap-2">
-                    <SocialLink
-                        name="Github"
-                        href="https://github.com/thejus-r"
-                        userName="@thejus-r"
-                    />
-                </li>
-                <li class="flex items-center gap-2">
-                    <SocialLink
-                        name="LinkedIn"
-                        href="https://www.linkedin.com/in/thejus-r/"
-                        userName="@thejus-r"
-                    />
-                </li>
-                <li class="flex items-center gap-2">
-                    <SocialLink
-                        name="Bluesky"
-                        href="https://bsky.app/profile/thejus-r.bsky.social"
-                        userName="thejus-r.bsky.social"
-                    />
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h3 class="text-neutral-400 mt-4 mb-2">// work experience</h3>
-            <ul class="flex flex-col gap-2">
-                <li class="flex items-center gap-2">
-                    <WorkCard
-                        role="UI/UX Designer"
-                        company="Flooid"
-                        fromDate={new Date("2023-03-15")}
-                        toDate={new Date("2024-10-27")}
-                    />
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h3 class="text-neutral-400 mt-4 mb-2">// projects</h3>
-            <ul class="flex flex-col gap-2">
-                <li class="flex items-center gap-2">
-                    <ProjectCard
-                        name="Better Resume"
-                        date="March 2025"
-                        href="https://github.com/thejus-r/better-resume"
-                    />
-                </li>
-                <li class="flex items-center gap-2">
-                    <ProjectCard
-                        name="Social API"
-                        date="January 2025"
-                        href="https://github.com/thejus-r/social"
-                    />
-                </li>
-                <li class="flex items-center gap-2">
-                    <ProjectCard
-                        name="Tasky"
-                        date="March 2023"
-                        href="https://github.com/thejus-r/tasky"
-                    />
-                </li>
-                <li class="flex items-center gap-2">
-                    <ProjectCard
-                        name="Tic Tac Toe"
-                        date="March 2023"
-                        href="https://tic-tac-toe-steel-phi.vercel.app/"
-                    />
-                </li>
-            </ul>
-        </div>
+    <div>
+      <h3 class="text-neutral-400 mt-4 mb-2">// socials</h3>
+      <ul class="flex flex-col gap-2">
+        <li class="flex items-center gap-2">
+          <SocialLink
+            name="Github"
+            href="https://github.com/thejus-r"
+            userName="@thejus-r"
+          />
+        </li>
+        <li class="flex items-center gap-2">
+          <SocialLink
+            name="LinkedIn"
+            href="https://www.linkedin.com/in/thejus-r/"
+            userName="@thejus-r"
+          />
+        </li>
+        <li class="flex items-center gap-2">
+          <SocialLink
+            name="Bluesky"
+            href="https://bsky.app/profile/thejus-r.bsky.social"
+            userName="thejus-r.bsky.social"
+          />
+        </li>
+      </ul>
     </div>
+    <div>
+      <h3 class="text-neutral-400 mt-4 mb-2">// work experience</h3>
+      <ul class="flex flex-col gap-2">
+        <li class="flex items-center gap-2">
+          <WorkCard
+            role="UI/UX Designer"
+            company="Flooid"
+            fromDate={new Date("2023-03-15")}
+            toDate={new Date("2024-10-27")}
+          />
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-neutral-400 mt-4 mb-2">// projects</h3>
+      <ul class="flex flex-col gap-2">
+        <li class="flex items-center gap-2">
+          <ProjectCard
+            name="Better Resume"
+            date="March 2025"
+            href="https://github.com/thejus-r/better-resume"
+          />
+        </li>
+        <li class="flex items-center gap-2">
+          <ProjectCard
+            name="Social API"
+            date="January 2025"
+            href="https://github.com/thejus-r/social"
+          />
+        </li>
+        <li class="flex items-center gap-2">
+          <ProjectCard
+            name="Tasky"
+            date="March 2023"
+            href="https://github.com/thejus-r/tasky"
+          />
+        </li>
+        <li class="flex items-center gap-2">
+          <ProjectCard
+            name="Tic Tac Toe"
+            date="March 2023"
+            href="https://tic-tac-toe-steel-phi.vercel.app/"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
 </Layout>

@@ -1,24 +1,24 @@
 ---
-import "../styles/global.css";
+import "@styles/global.css";
 import Analytics from "@vercel/analytics/astro";
-import Nav from "../components/Nav.astro";
-import BaseHead from "../components/BaseHead.astro";
+import Nav from "@components/Nav.astro";
+import BaseHead from "@components/BaseHead.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <BaseHead title="Thejus Rajendran" description="My Website" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Thejus Rajendran</title>
-    </head>
-    <body
-        class="md:h-screen w-screen subpixel-antialiased flex flex-col md:flex-row overflow-auto"
-    >
-        <Nav />
-        <main class="overflow-y-scroll flex-1">
-            <slot />
-        </main>
-        <Analytics />
-    </body>
+  <head>
+    <BaseHead title="Thejus Rajendran" description="My Website" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Thejus Rajendran</title>
+  </head>
+  <body
+    class="md:h-screen w-screen subpixel-antialiased flex flex-col md:flex-row overflow-auto"
+  >
+    <Nav />
+    <main class="overflow-y-scroll flex-1">
+      <slot />
+    </main>
+    <Analytics />
+  </body>
 </html>
