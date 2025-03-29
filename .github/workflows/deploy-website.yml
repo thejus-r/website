@@ -23,4 +23,6 @@ jobs:
       - name: "Build Astro"
         run: pnpm run build
       - name: deploy using wrangler
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: pnpm run deploy
