@@ -1,12 +1,12 @@
-import resume from "@assets/icons/better-resume.svg";
-import social from "@assets/icons/bloom-book.svg";
-import game from "@assets/icons/game.svg";
-import github from "@assets/icons/github.svg";
-import home from "@assets/icons/home.svg";
-import linkedin from "@assets/icons/linkedin.svg";
-import tasks from "@assets/icons/tasks.svg";
-import blog from "@assets/icons/writing.svg";
-import bluesky from "@assets/icons/bluesky.svg";
+import resume from "../assets/icons/better-resume.svg";
+import social from "../assets/icons/bloom-book.svg";
+import game from "../assets/icons/game.svg";
+import github from "../assets/icons/github.svg";
+import home from "../assets/icons/home.svg";
+import linkedin from "../assets/icons/linkedin.svg";
+import tasks from "../assets/icons/tasks.svg";
+import blog from "../assets/icons/writing.svg";
+import bluesky from "../assets/icons/bluesky.svg";
 
 const routes = [
   {

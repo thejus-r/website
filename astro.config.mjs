@@ -2,7 +2,6 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import alpinejs from "@astrojs/alpinejs";
-import path from "path";
 import cloudflare from '@astrojs/cloudflare';
 
 
@@ -10,18 +9,9 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
-    resolve: {
-      alias: {
-        '@components': path.resolve("./src/components"),
-        '@assets': path.resolve( "./src/assets"),
-        '@layouts': path.resolve( "./src/layouts"),
-        '@config': path.resolve( "./src/config"),
-        '@types': path.resolve( "./src/types"),
-        '@styles': path.resolve( "./src/styles"),
-      }
-    }
   },
-
   integrations: [alpinejs()],
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: "compile"
+  }),
 });

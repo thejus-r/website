@@ -1,10 +1,10 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { Image } from "astro:assets";
-import externalLinkIcon from "@assets/icons/external-link.svg";
+import externalLinkIcon from "../assets/icons/external-link.svg";
 type Props = HTMLAttributes<"a"> & {
-    icon: any;
-    href: string;
+  icon: any;
+  href: string;
 };
 const { href, icon, class: className, ...props } = Astro.props;
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
@@ -14,26 +14,26 @@ const isExternalLink = !href.startsWith("/");
 ---
 
 <a
-    href={href}
-    target={isExternalLink ? "_blank" : "_self"}
-    class:list={[
-        "rounded-xl w-full items-center text-sm bg-neutral-100 text-neutral-800 p-3 md:p-2 flex gap-1.5 hover:brightness-95",
-        { "bg-white hover:brightness-100": isActive },
-    ]}
-    {...props}
+  href={href}
+  target={isExternalLink ? "_blank" : "_self"}
+  class:list={[
+    "rounded-xl w-full items-center text-sm bg-neutral-100 text-neutral-800 p-3 md:p-2 flex gap-1.5 hover:brightness-95",
+    { "bg-white hover:brightness-100": isActive },
+  ]}
+  {...props}
 >
-    <div class="flex gap-2 flex-1">
-        <Image loading="eager" height={"16"} src={icon} alt={"home"} />
-        <slot />
-    </div>
-    {
-        isExternalLink && (
-            <Image
-                loading="eager"
-                width={16}
-                src={externalLinkIcon}
-                alt={"external link icon"}
-            />
-        )
-    }
+  <div class="flex gap-2 flex-1">
+    <Image loading="eager" height={"16"} src={icon} alt={"home"} />
+    <slot />
+  </div>
+  {
+    isExternalLink && (
+      <Image
+        loading="eager"
+        width={16}
+        src={externalLinkIcon}
+        alt={"external link icon"}
+      />
+    )
+  }
 </a>
