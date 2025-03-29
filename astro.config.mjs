@@ -12,12 +12,12 @@ export default defineConfig({
     plugins: [tailwindcss()],
     resolve: {
       alias: {
-        '@components': path.resolve(__dirname, "./src/components"),
-        '@assets': path.resolve(__dirname, "./src/assets"),
-        '@layouts': path.resolve(__dirname, "./src/layouts"),
-        '@config': path.resolve(__dirname, "./src/config"),
-        '@types': path.resolve(__dirname, "./src/types"),
-        '@styles': path.resolve(__dirname, "./src/styles"),
+        '@components': path.resolve("./src/components"),
+        '@assets': path.resolve( "./src/assets"),
+        '@layouts': path.resolve( "./src/layouts"),
+        '@config': path.resolve( "./src/config"),
+        '@types': path.resolve( "./src/types"),
+        '@styles': path.resolve( "./src/styles"),
       }
     }
   },
