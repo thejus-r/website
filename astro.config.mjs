@@ -2,7 +2,6 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import alpinejs from "@astrojs/alpinejs";
-import cloudflare from '@astrojs/cloudflare';
 
 import path from "path"
 
@@ -23,7 +22,4 @@ export default defineConfig({
     }
   },
   integrations: [alpinejs()],
-  adapter: cloudflare({
-    imageService: "compile"
-  }),
 });
