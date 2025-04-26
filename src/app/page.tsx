@@ -1,3 +1,4 @@
+import Card from "@/components/Card";
 import NavBar from "@/components/NavBar";
 import Image from "next/image";
 
@@ -39,10 +40,10 @@ const logos = [
 
 const HeroSection = () => {
   return (
-    <section className="relative h-screen w-screen py-24 px-16 text-white">
+    <section className="relative h-screen w-screen py-24 px-16  text-white">
       <div className="h-full flex flex-col justify-between">
         <div className="flex flex-1 justify-center gap-4 flex-col">
-          <h1 className="text-5xl/14 font-serif text-white/85 mix-blend-plus-lighter">
+          <h1 className="text-5xl/14 font-serif font-thin text-white/85 mix-blend-plus-lighter">
             Product & <br /> Experience Designer
           </h1>
           <h2 className="text-white/60 text-lg mix-blend-plus-lighter">
@@ -61,6 +62,9 @@ const HeroSection = () => {
             ))}
           </div>
         </div>
+      </div>
+      <div className="h-full w-full absolute top-0 right-0 flex flex-col justify-between">
+        <Card />
       </div>
 
       {/* Gradient Overlay */}
