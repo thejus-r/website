@@ -227,10 +227,12 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
       <mesh ref={band}>
         <meshLineGeometry />
         <meshLineMaterial
+          transparent={true}
+          opacity={0.8}
           depthTest={false}
           lineWidth={1}
-          color={"black"}
-          resolution={new THREE.Vector2(1, 1)}
+          color={0xffffff}
+          resolution={new THREE.Vector2(100, 100)}
           args={[{ resolution: new THREE.Vector2(width, height) }]}
         />
       </mesh>
