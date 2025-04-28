@@ -1,5 +1,5 @@
 import { inter } from "@/styles/fonts";
-import SectionWrapper from "../SectionWrapper";
+import SectionWrapper from "@/components/SectionWrapper";
 import Testimonial from "@/types/testimonial";
 import testimonials from "@/content/testimonials";
 
