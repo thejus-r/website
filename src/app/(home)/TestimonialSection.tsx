@@ -1,4 +1,3 @@
-import { inter } from "@/styles/fonts";
 import SectionWrapper from "@/components/SectionWrapper";
 import Testimonial from "@/types/testimonial";
 import testimonials from "@/content/testimonials";
@@ -9,7 +8,7 @@ const TestimonialSection = () => {
       <section>
         <div className="flex flex-col gap-1">
           <h3 className="font-bold text-xl">Kind words, Only ...</h3>
-          <p className={`text-base ${inter.className} text-neutral-500`}>
+          <p className="font-text text-base text-neutral-500">
             What others say about me
           </p>
         </div>
@@ -27,12 +26,12 @@ const TestimonialCard = (testimonial: Testimonial) => {
   const { name, designation, content } = testimonial;
   return (
     <div className="border border-neutral-200 p-6 flex flex-col gap-10">
-      <p>{content}</p>
+      <p className="">{content}</p>
       <div className="flex gap-4 items-end">
         <div className="h-16 w-12 bg-neutral-100" />
         <div>
-          <p className="text-sm font-semibold">{name}</p>
-          <p className="text-sm text-neutral-500">{designation}</p>
+          <p className="text-base font-semibold">{name}</p>
+          <p className="font-text text-xs text-neutral-500">{designation}</p>
         </div>
       </div>
     </div>

@@ -1,4 +1,3 @@
-import { geistMono, inter } from "@/styles/fonts";
 import SectionWrapper from "@/components/SectionWrapper";
 import { Insight, Project } from "@/types/project";
 import { projects } from "@/content/projects";
@@ -11,9 +10,7 @@ const ProjectCard = (project: Project) => {
       <div className="flex flex-col gap-8 flex-1">
         <div className="flex flex-col gap-1">
           <h4 className="text-2xl font-bold">{name}</h4>
-          <p className={`${inter.className} text-base text-neutral-500`}>
-            {description}
-          </p>
+          <p className="font-text text-base text-neutral-500">{description}</p>
         </div>
         <div className="flex gap-10">
           {insights.map((insight, index) => {
@@ -32,8 +29,8 @@ const ProjectCard = (project: Project) => {
 const InsightCard = ({ value, description }: Insight) => {
   return (
     <div className="flex flex-col max-w-32">
-      <p className={`${geistMono.className} font-bold text-lg`}>{value} </p>
-      <p className={`${geistMono.className} text-sm/snug text-neutral-500`}>
+      <p className="font-mono font-bold text-lg">{value} </p>
+      <p className="font-mono tracking-tight text-sm/snug text-neutral-500">
         {description}
       </p>
     </div>
@@ -46,7 +43,7 @@ const ProjectSection = () => {
       <section>
         <div className="flex p-5 md:p-10 flex-col gap-1 border-b border-b-neutral-200">
           <h3 className="font-bold text-xl">Projects</h3>
-          <p className={`text-base ${inter.className} text-neutral-500`}>
+          <p className="text-base text-neutral-500 font-text">
             Only the best of the best has made to here.
           </p>
         </div>
