@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
-import { Roboto_Serif, DM_Sans } from "next/font/google";
-import "./globals.css";
-
-const robotoSerif = Roboto_Serif({
-  variable: "--font-roboto-serif",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
+import "@/styles/globals.css";
+import { satoshi } from "@/styles/fonts";
+import Navigation from "@/components/Navigation";
+import { ReactLenis } from "lenis/react";
 
 export const metadata: Metadata = {
   title: "Thejus Rajendran",
@@ -26,11 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${robotoSerif.variable} ${dmSans.variable} font-sans antialiased`}
-      >
-        {children}
-      </body>
+      <ReactLenis root>
+        <body className={`${satoshi.className} font-sans antialiased`}>
+          <Navigation />
+          {children}
+        </body>
+      </ReactLenis>
     </html>
   );
 }
