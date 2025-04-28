@@ -1,5 +1,5 @@
 import { geistMono, inter } from "@/styles/fonts";
-import SectionWrapper from "../SectionWrapper";
+import SectionWrapper from "@/components/SectionWrapper";
 import { Insight, Project } from "@/types/project";
 import { projects } from "@/content/projects";
 

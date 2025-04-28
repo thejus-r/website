@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import { satoshi } from "@/styles/fonts";
+import {
+  geistMono,
+  inter,
+  interItalic,
+  satoshi,
+  satoshiItalic,
+} from "@/styles/fonts";
 import Navigation from "@/components/Navigation";
 import { ReactLenis } from "lenis/react";
 
@@ -15,9 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${satoshi.variable} ${satoshiItalic.variable} ${inter.variable} ${interItalic.variable} ${geistMono.variable} `}
+    >
       <ReactLenis root>
-        <body className={`${satoshi.className} font-sans antialiased`}>
+        <body className="font-sans antialiased">
           <Navigation />
           {children}
         </body>

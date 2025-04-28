@@ -1,5 +1,5 @@
+import SectionWrapper from "@/components/SectionWrapper";
 import { inter } from "@/styles/fonts";
-import SectionWrapper from "../SectionWrapper";
 
 const HeroSection = () => {
   return (

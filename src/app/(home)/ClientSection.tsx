@@ -1,6 +1,6 @@
 import { inter } from "@/styles/fonts";
-import SectionWrapper from "../SectionWrapper";
 import clients from "@/content/clients";
+import SectionWrapper from "@/components/SectionWrapper";
 
 const ClientsSection = () => {
   return (

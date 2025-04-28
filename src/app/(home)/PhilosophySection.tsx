@@ -1,4 +1,4 @@
-import SectionWrapper from "../SectionWrapper";
+import SectionWrapper from "@/components/SectionWrapper";
 
 const PhilosophySection = () => {
   return (
