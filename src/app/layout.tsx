@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import {
-  geistMono,
-  inter,
-  interItalic,
-  satoshi,
-  satoshiItalic,
-} from "@/styles/fonts";
+import { geistMono, inter, satoshi } from "@/styles/fonts";
 import Navigation from "@/components/Navigation";
 import { ReactLenis } from "lenis/react";
 
@@ -23,10 +17,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${satoshi.variable} ${satoshiItalic.variable} ${inter.variable} ${interItalic.variable} ${geistMono.variable} `}
+      className={`${satoshi.variable} ${inter.variable} ${geistMono.variable} `}
     >
       <ReactLenis root>
-        <body className="font-sans antialiased">
+        <body className="subpixel-antialiased">
           <Navigation />
           {children}
         </body>
