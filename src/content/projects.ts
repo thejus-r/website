@@ -7,7 +7,7 @@ export const projects: Project[] = [
     name: "Herkey",
     description:
       "Redesign of the India’s largest career engagement platform for women",
-    link: "/",
+    link: "/works/herkey",
     thumbnailImage: "",
     projectPreview: PreviewPlaceholder,
     insights: [
