@@ -6,13 +6,13 @@ import TestimonialSection from "./TestimonialSection";
 
 const HomePage = () => {
   return (
-    <>
+    <main>
       <HeroSection />
       <ProjectSection />
       <ClientsSection />
       <PhilosophySection />
       <TestimonialSection />
-    </>
+    </main>
   );
 };
 

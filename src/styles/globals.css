@@ -4,4 +4,8 @@
     --font-sans: var(--font-satoshi), sans-serif;
     --font-mono: var(--font-geist-mono), monospace;
     --font-text: var(--font-inter);
+
+    --color-primary: var(--color-neutral-900);
+    --color-secondary: var(--color-neutral-500);
+    --color-i-primary: var(--color-neutral-50);
 }

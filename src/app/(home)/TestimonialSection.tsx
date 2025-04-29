@@ -1,13 +1,14 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import Testimonial from "@/types/testimonial";
 import testimonials from "@/content/testimonials";
+import { H3 } from "@/components/ui/Typography";
 
 const TestimonialSection = () => {
   return (
     <SectionWrapper>
       <section>
         <div className="flex flex-col gap-1">
-          <h3 className="font-bold text-xl">Kind words, Only ...</h3>
+          <H3>Kind words, Only ...</H3>
           <p className="font-text text-base text-neutral-500">
             What others say about me
           </p>

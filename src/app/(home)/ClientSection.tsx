@@ -1,15 +1,14 @@
 import clients from "@/content/clients";
 import SectionWrapper from "@/components/SectionWrapper";
+import { H3, P } from "@/components/ui/Typography";
 
 const ClientsSection = () => {
   return (
     <SectionWrapper>
       <section>
         <div className="flex flex-col gap-1">
-          <h3 className="font-bold text-xl">Clients! Clients! Clients!</h3>
-          <p className="font-text text-base text-neutral-500">
-            Have worked with some of the best ones out there
-          </p>
+          <H3>Clients! Clients! Clients!</H3>
+          <P>Have worked with some of the best ones out there</P>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-10">
           {clients.map((client) => {
