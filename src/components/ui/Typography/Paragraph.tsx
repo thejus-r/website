@@ -8,15 +8,17 @@ const paragraphVariants = cva(["text-pretty"], {
       primary: "text-primary/80",
       secondary: "text-secondary/80",
       invertedPrimary: "text-i-primary",
-      invertedSecondary: "text-i-primary/25",
+      invertedSecondary: "text-i-primary/50",
     },
     type: {
+      special: "font-sans",
       mono: "font-mono",
       default: "font-text",
     },
     size: {
-      large: "text-lg/relaxed",
-      default: "text-base/relaxed",
+      large: ["text-base/relaxed", "md:text-lg/relaxed"],
+      default: ["text-sm/relaxed", "md:text-base/relaxed"],
+      small: ["text-xs/normal", "md:text-sm/normal"],
     },
   },
   defaultVariants: {

@@ -6,11 +6,11 @@ const ClientsSection = () => {
   return (
     <SectionWrapper>
       <section>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <H3>Clients! Clients! Clients!</H3>
           <P>Have worked with some of the best ones out there</P>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8 mb-4">
           {clients.map((client) => {
             return (
               <div
