@@ -13,7 +13,7 @@ const headingVariants = cva(["mix-blend-plus-lighter"], {
     size: {
       h1: ["text-2xl/tight", "md:text-3xl/tight", "font-bold"],
       h2: ["text-2xl/tight", "font-bold"],
-      h3: ["text-xl/tight", "md:text-xl/tight", "font-bold"],
+      h3: ["text-xl/normal", "md:text-xl/normal", "font-bold"],
       h4: ["text-lg/tight", "md:text-xl/tight", "font-bold"],
       h5: ["text-lg/tight", "md:text-xl/tight", "font-bold"],
       h6: ["text-lg/tight", "md:text-xl/tight", "font-bold"],

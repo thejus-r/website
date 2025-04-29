@@ -2,15 +2,15 @@ import SectionWrapper from "@/components/SectionWrapper";
 import { Insight, Project } from "@/types/project";
 import { projects } from "@/content/projects";
 import Link from "next/link";
-import { H2, H3, P } from "@/components/ui/Typography";
+import { H2, H3, P, Label } from "@/components/ui/Typography";
 
 const ProjectCard = (project: Project) => {
   const { name, description, insights } = project;
   return (
     <div className="flex flex-col-reverse md:flex-row p-5 md:p-10 gap-8 not-last:border-b border-b-neutral-200">
       <div className="hidden lg:block h-24 w-24 bg-neutral-200"></div>
-      <div className="flex flex-col gap-8 flex-1">
-        <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-6 flex-1">
+        <div className="flex flex-col gap-2">
           <H2>{name}</H2>
           <P>{description}</P>
         </div>
@@ -33,11 +33,13 @@ const ProjectCard = (project: Project) => {
 
 const InsightCard = ({ value, description }: Insight) => {
   return (
-    <div className="flex flex-col max-w-32">
-      <p className="font-mono font-bold text-lg">{value} </p>
-      <p className="font-mono tracking-tight text-sm/snug text-neutral-500">
+    <div className="flex flex-col gap-1 max-w-32">
+      <Label weight={"semibold"} size={"large"}>
+        {value}
+      </Label>
+      <P type={"mono"} size={"small"}>
         {description}
-      </p>
+      </P>
     </div>
   );
 };
@@ -46,7 +48,7 @@ const ProjectSection = () => {
   return (
     <SectionWrapper noPadding>
       <section>
-        <div className="flex p-5 md:p-10 flex-col gap-1 border-b border-b-neutral-200">
+        <div className="flex p-5 md:p-10 flex-col gap-2 border-b border-b-neutral-200">
           <H3>Projects</H3>
           <P>Only the best of the best has made to here.</P>
         </div>
