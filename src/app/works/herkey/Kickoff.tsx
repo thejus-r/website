@@ -1,4 +1,5 @@
 import SectionWrapper from "@/components/SectionWrapper";
+import { DisplaySmall, Label, P } from "@/components/ui/Typography";
 
 type Insight = {
   adlib: string;
@@ -35,16 +36,16 @@ const KickOffSection = () => {
   return (
     <SectionWrapper>
       <div className="flex flex-col gap-4">
-        <span className="text-sm font-mono text-neutral-400">Kickoff</span>
-        <h3 className="text-2xl md:text-3xl font-bold md:max-w-xl">
-          Early insights from the fields
-        </h3>
-        <div className="flex flex-col gap-4 font-text text-neutral-500 md:max-w-2xl">
-          <p>
+        <Label intent={"tertiary"}>Kickoff</Label>
+        <DisplaySmall>Early insights from the fields</DisplaySmall>
+        <div className="flex flex-col gap-4 md:max-w-2xl">
+          <P size={"large"}>
             We interviewed more than ten women across different domains, age and
             career levels.
-          </p>
-          <p>Our goals were to understand the challengers faced by them.</p>
+          </P>
+          <P size={"large"}>
+            Our goals were to understand the challengers faced by them.
+          </P>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 xl:gap-8">
           {insights.map((insight, index) => {
@@ -60,9 +61,13 @@ const InsightCard = (insight: Insight) => {
   const { adlib, value, description } = insight;
   return (
     <div className="bg-neutral-100 col-span-1 p-4 flex flex-col gap-2">
-      <span className="font-mono text-neutral-400">{adlib}</span>
-      <p className="text-4xl font-mono font-light">{value}</p>
-      <p className="text-sm text-pretty md:text-balance">{description}</p>
+      <Label intent={"tertiary"} weight={"normal"}>
+        {adlib}
+      </Label>
+      <Label intent={"primary"} weight={"light"} size={"xlarge"}>
+        {value}
+      </Label>
+      <P>{description}</P>
     </div>
   );
 };

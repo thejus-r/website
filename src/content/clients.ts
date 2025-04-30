@@ -3,31 +3,36 @@ import Client from "@/types/client";
 const clients: Client[] = [
   {
     name: "Microsoft",
-    iconSrc: "",
+    iconSrc: "assets/logos/microsoft-logo.svg",
   },
   {
     name: "Herkey",
-    iconSrc: "",
+    iconSrc: "assets/logos/herkey-logo.svg",
   },
-  {
-    name: "Studeyo Technologies",
-    iconSrc: "",
-  },
+
   {
     name: "DBS Bank",
-    iconSrc: "",
+    iconSrc: "assets/logos/dbs-logo.svg",
   },
   {
     name: "Naukri",
-    iconSrc: "",
+    iconSrc: "assets/logos/naukri-logo.svg",
+  },
+  {
+    name: "Swiggy",
+    iconSrc: "assets/logos/swiggy-logo.svg",
+  },
+  {
+    name: "Studeyo Technologies",
+    iconSrc: "assets/logos/studeyo-logo.svg",
   },
   {
     name: "OMI Foundation",
-    iconSrc: "",
+    iconSrc: "assets/logos/omi-logo.svg",
   },
   {
     name: "ValueQuest",
-    iconSrc: "",
+    iconSrc: "assets/logos/vq-logo.svg",
   },
 ];
 

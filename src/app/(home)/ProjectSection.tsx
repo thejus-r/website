@@ -26,7 +26,7 @@ const ProjectCard = (project: Project) => {
           Read case study
         </Link>
       </div>
-      <div className="md:w-[350] h-[350] bg-neutral-200"></div>
+      <div className="md:w-[350] h-[350] grid-pattern"></div>
     </div>
   );
 };
