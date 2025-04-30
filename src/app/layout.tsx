@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { geistMono, inter, satoshi } from "@/styles/fonts";
 import Navigation from "@/components/Navigation";
 import { ReactLenis } from "lenis/react";
+import { ViewTransitions } from "next-view-transitions";
 
 export const metadata: Metadata = {
   title: "Thejus Rajendran",
@@ -20,10 +21,12 @@ export default function RootLayout({
       className={`${satoshi.variable} ${inter.variable} ${geistMono.variable} `}
     >
       <ReactLenis root>
-        <body className="subpixel-antialiased">
-          <Navigation />
-          {children}
-        </body>
+        <ViewTransitions>
+          <body className="subpixel-antialiased">
+            <Navigation />
+            {children}
+          </body>
+        </ViewTransitions>
       </ReactLenis>
     </html>
   );

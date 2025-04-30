@@ -7,18 +7,21 @@ const labelVariants = cva(["block"], {
     intent: {
       primary: "text-primary",
       secondary: "text-secondary/80",
+      tertiary: "text-tertiary",
       invertedPrimary: "text-i-primary",
       invertedSecondary: "text-i-primary/50",
     },
     weight: {
       semibold: ["font-semibold"],
       normal: ["font-normal"],
+      light: ["font-light"],
     },
     type: {
       sans: "font-sans",
       mono: "font-mono",
     },
     size: {
+      xlarge: ["text-4xl"],
       large: ["md:text-lg", "text-base"],
       default: ["text-sm/relaxed", "md:text-base/relaxed"],
       small: ["md:text-sm", "text-xs"],
