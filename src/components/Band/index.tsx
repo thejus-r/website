@@ -8,7 +8,7 @@ import {
   useThree,
 } from "@react-three/fiber";
 import { Environment, Lightformer, useGLTF } from "@react-three/drei";
-import { MeshLineGeometry, MeshLineMaterial } from "meshline";
+import { MeshLineGeometry, MeshLineMaterial, raycast } from "meshline";
 import { useRef, useState } from "react";
 import { GLTF } from "three-stdlib";
 import {
@@ -73,7 +73,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
   useSphericalJoint(j3, card, [
     [0, 0, 0],
-    [0, 1.45, 0],
+    [0, 1.4, 0],
   ]);
 
   // A Catmull-Rom curve
@@ -156,29 +156,29 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           <BallCollider args={[0.1]} />
         </RigidBody>
         <RigidBody
+          type="dynamic"
           position={[0.5, 0, 0]}
           colliders={false}
           ref={j1}
           canSleep={true}
-          type="dynamic"
           angularDamping={2}
           linearDamping={2}
         >
           <BallCollider args={[0.1]} />
         </RigidBody>
         <RigidBody
+          type="dynamic"
           colliders={false}
           position={[1, 0.5, 0]}
           ref={j2}
           canSleep={true}
-          type="dynamic"
           angularDamping={2}
           linearDamping={2}
         >
           <BallCollider args={[0.1]} />
         </RigidBody>
         <RigidBody
-          position={[1.5, 1, 0]}
+          position={[1.5, 1, 1]}
           colliders={false}
           ref={j3}
           canSleep={true}
@@ -193,14 +193,14 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           ref={card}
           type="dynamic"
           colliders={false}
-          canSleep={true}
+          canSleep={false}
           angularDamping={2}
           linearDamping={2}
         >
           <CuboidCollider position={[0, -1, 0]} args={[1.4, 1.95, 0.01]} />
           <group
             scale={2.75}
-            position={[0, -2.95, -0.05]}
+            position={[-0.01, -3, -0.05]}
             rotation={[0, -Math.PI / 2, 0]}
           >
             <mesh
@@ -226,7 +226,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           </group>
         </RigidBody>
       </group>
-      <mesh ref={band}>
+      <mesh raycast={raycast} ref={band}>
         <meshLineGeometry />
         <meshLineMaterial
           transparent
