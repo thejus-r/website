@@ -1,9 +1,16 @@
 import SectionWrapper from "@/components/SectionWrapper";
+import {
+  StarterIcon,
+  ChampionIcon,
+  RiserIcon,
+  RestarterIcon,
+} from "@/components/ui/Icons";
 import { DisplaySmall, Label, P } from "@/components/ui/Typography";
 
 type UserGroup = {
   name: string;
   description: string;
+  icon: React.ReactElement;
 };
 
 const userGroups: UserGroup[] = [
@@ -11,21 +18,25 @@ const userGroups: UserGroup[] = [
     name: "Starters",
     description:
       "Freshers who are just starting their career or will be joining the work force after graduation",
+    icon: <StarterIcon className="text-white w-8 h-8" />,
   },
   {
     name: "Risers",
     description:
       "Those around middle management roles, who wants to advance their career forward",
+    icon: <RiserIcon className="text-white w-8 h-8" />,
   },
   {
     name: "Restarters",
     description:
       "Those who have taken a break in the career, now trying to join back the work force",
+    icon: <RestarterIcon className="text-white w-8 h-8" />,
   },
   {
     name: "Champions",
     description:
       "Those with immense experience who wanted to guide, support and engage with other women",
+    icon: <ChampionIcon className="text-white w-8 h-8" />,
   },
 ];
 
@@ -58,10 +69,12 @@ const DiscoverySection = () => {
 };
 
 const GroupCard = (userGroup: UserGroup) => {
-  const { name, description } = userGroup;
+  const { name, description, icon } = userGroup;
   return (
     <div className="p-4 flex gap-4 bg-white/5">
-      <div className="h-16 w-16 bg-white/10"></div>
+      <div className="h-full w-20 bg-neutral-800 flex items-center justify-center">
+        {icon}
+      </div>
       <div className="flex flex-1 flex-col gap-1">
         <Label weight={"semibold"} size={"large"} intent={"invertedPrimary"}>
           {name}

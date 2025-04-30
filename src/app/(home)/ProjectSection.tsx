@@ -1,8 +1,9 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import { Insight, Project } from "@/types/project";
 import { projects } from "@/content/projects";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { H2, H3, P, Label } from "@/components/ui/Typography";
+import Button from "@/components/ui/Button";
 
 const ProjectCard = (project: Project) => {
   const { name, description, insights } = project;
@@ -19,11 +20,8 @@ const ProjectCard = (project: Project) => {
             return <InsightCard key={index} {...insight} />;
           })}
         </div>
-        <Link
-          href={project.link}
-          className="px-4 text-white bg-neutral-950 h-14 md:h-12 min-w-32 md:w-fit"
-        >
-          Read case study
+        <Link href={project.link}>
+          <Button>Read case study</Button>
         </Link>
       </div>
       <div className="md:w-[350] h-[350] grid-pattern"></div>
