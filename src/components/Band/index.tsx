@@ -4,12 +4,13 @@ import {
   Canvas,
   extend,
   ThreeElement,
+  ThreeEvent,
   useFrame,
   useThree,
 } from "@react-three/fiber";
 import { Environment, Lightformer, useGLTF } from "@react-three/drei";
 import { MeshLineGeometry, MeshLineMaterial, raycast } from "meshline";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GLTF } from "three-stdlib";
 import {
   BallCollider,
@@ -60,17 +61,30 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const j3 = useRef<RapierRigidBody>(null);
   const card = useRef<RapierRigidBody>(null);
 
+  // states
+  const [dragged, drag] = useState<THREE.Vector3 | false>(false);
+  const [hovered, hover] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (hovered) {
+      document.body.style.cursor = dragged ? "grabbing" : "grab";
+      return () => void (document.body.style.cursor = "auto");
+    }
+  }, [hovered, dragged]);
+
   // vectors
   const ang = new THREE.Vector3(),
-    rot = new THREE.Vector3();
+    rot = new THREE.Vector3(),
+    vec = new THREE.Vector3(),
+    dir = new THREE.Vector3();
 
   // for resolution
   const { width, height } = useThree((state) => state.size);
 
   // rope joints
-  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
-  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
-  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
+  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 2]);
+  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 2]);
+  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 2]);
   useSphericalJoint(j3, card, [
     [0, 0, 0],
     [0, 1.4, 0],
@@ -88,6 +102,18 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   );
 
   useFrame((state, delta) => {
+    if (dragged) {
+      vec.set(state.pointer.x, state.pointer.y, 0.5).unproject(state.camera);
+      dir.copy(vec).sub(state.camera.position).normalize();
+      vec.add(dir.multiplyScalar(state.camera.position.length()));
+      [card, j1, j2, j3, fixed].forEach((ref) => ref.current?.wakeUp());
+      card.current?.setNextKinematicTranslation({
+        x: vec.x - dragged.x,
+        y: vec.y - dragged.y,
+        z: vec.z - dragged.z,
+      });
+    }
+
     if (j3.current) curve.points[0].copy(j3.current.translation());
     if (j2.current) curve.points[1].copy(j2.current.translation());
     if (j1.current) curve.points[2].copy(j1.current.translation());
@@ -140,11 +166,28 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     }
   });
 
+  function handleGrabCard(e: ThreeEvent<PointerEvent>) {
+    const target = e.target as HTMLElement;
+    target.releasePointerCapture(e.pointerId);
+    drag(false);
+  }
+
+  function handleReleaseCard(e: ThreeEvent<PointerEvent>) {
+    const target = e.target as HTMLElement;
+    const newCardLoc = card.current
+      ? card.current.translation()
+      : new THREE.Vector3(0, 0, 0);
+    return (
+      target.setPointerCapture(e.pointerId),
+      drag(new THREE.Vector3().copy(e.point).sub(vec.copy(newCardLoc)))
+    );
+  }
+
   curve.curveType = "chordal";
 
   return (
     <>
-      <group position={[3, 5.5, 0]}>
+      <group position={[3.5, 8.5, 0]}>
         <RigidBody
           type="fixed"
           colliders={false}
@@ -157,7 +200,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
         </RigidBody>
         <RigidBody
           type="dynamic"
-          position={[0.5, 0, 0]}
+          position={[1, 0, 0]}
           colliders={false}
           ref={j1}
           canSleep={true}
@@ -169,7 +212,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
         <RigidBody
           type="dynamic"
           colliders={false}
-          position={[1, 0.5, 0]}
+          position={[2, 0, 0]}
           ref={j2}
           canSleep={true}
           angularDamping={2}
@@ -178,7 +221,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           <BallCollider args={[0.1]} />
         </RigidBody>
         <RigidBody
-          position={[1.5, 1, 1]}
+          position={[3, 0, 0]}
           colliders={false}
           ref={j3}
           canSleep={true}
@@ -189,9 +232,9 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           <BallCollider args={[0.1]} />
         </RigidBody>
         <RigidBody
-          position={[2, 2, 0]}
+          position={[4, 0, 0]}
           ref={card}
-          type="dynamic"
+          type={dragged ? "kinematicPosition" : "dynamic"}
           colliders={false}
           canSleep={false}
           angularDamping={2}
@@ -202,6 +245,10 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
             scale={2.75}
             position={[-0.01, -3, -0.05]}
             rotation={[0, -Math.PI / 2, 0]}
+            onPointerOver={() => hover(true)}
+            onPointerOut={() => hover(false)}
+            onPointerUp={(e) => handleGrabCard(e)}
+            onPointerDown={(e) => handleReleaseCard(e)}
           >
             <mesh
               geometry={nodes.clip.geometry}
