@@ -7,9 +7,10 @@ export type Project = {
   name: string;
   description: string;
   thumbnailImage: string;
-  projectPreview: () => React.ReactElement;
   link: string;
   insights: Insight[];
+  featured: boolean;
+  active: boolean;
 };
 
 export default Project;

@@ -4,6 +4,7 @@ import { geistMono, inter, satoshi } from "@/styles/fonts";
 import Navigation from "@/components/Navigation";
 import { ReactLenis } from "lenis/react";
 import { ViewTransitions } from "next-view-transitions";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Thejus Rajendran",
@@ -22,9 +23,10 @@ export default function RootLayout({
     >
       <ReactLenis root>
         <ViewTransitions>
-          <body className="subpixel-antialiased">
+          <body className="subpixel-antialiased flex flex-col">
             <Navigation />
-            {children}
+            <div className="flex-1">{children}</div>
+            <Footer />
           </body>
         </ViewTransitions>
       </ReactLenis>

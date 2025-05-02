@@ -11,7 +11,7 @@ const TestimonialSection = () => {
           <H3>Kind words, Only ...</H3>
           <P>What others say about me</P>
         </div>
-        <div className="grid grid-cols-1 mt-6 md:mt-8 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 mt-6 md:mt-8 md:grid-cols-2 gap-10 md:gap-4">
           {testimonials.map((testimonial, index) => {
             return <TestimonialCard key={index} {...testimonial} />;
           })}
@@ -24,7 +24,7 @@ const TestimonialSection = () => {
 const TestimonialCard = (testimonial: Testimonial) => {
   const { name, designation, content } = testimonial;
   return (
-    <div className="border border-neutral-200 p-4 md:p-8 flex flex-col gap-8">
+    <div className="border-0 md:border border-neutral-200 p-0 sm:p-4 md:p-5 flex flex-col justify-between gap-5">
       <P type={"special"} intent={"primary"}>
         {content}
       </P>

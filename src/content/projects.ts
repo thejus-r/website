@@ -7,9 +7,10 @@ export const projects: Project[] = [
     name: "Herkey",
     description:
       "Redesign of the India’s largest career engagement platform for women",
-    link: "/works/herkey",
-    thumbnailImage: "",
-    projectPreview: PreviewPlaceholder,
+    link: "/work/herkey",
+    thumbnailImage: "/images/herkey/herkey-thumbnail-t.png",
+    featured: true,
+    active: true,
     insights: [
       {
         value: "35,00,000+",
@@ -27,7 +28,27 @@ export const projects: Project[] = [
       "Adapting the online astrology platform for larger screens for reaching a wider audience",
     link: "/",
     thumbnailImage: "",
-    projectPreview: PreviewPlaceholder,
+    featured: false,
+    active: false,
+    insights: [
+      {
+        value: "1,50,000",
+        description: "users in beta",
+      },
+      {
+        value: "5,00,000+",
+        description: "downloads",
+      },
+    ],
+  },
+  {
+    name: "Adding.Plus",
+    description:
+      "Adapting the online astrology platform for larger screens for reaching a wider audience",
+    link: "/",
+    thumbnailImage: "",
+    featured: false,
+    active: false,
     insights: [
       {
         value: "1,50,000",
