@@ -1,5 +1,5 @@
 import SectionWrapper from "@/components/SectionWrapper";
-import { H3, P, DisplaySmall } from "@/components/ui/Typography";
+import { P, DisplaySmall } from "@/components/ui/Typography";
 
 const PhilosophySection = () => {
   return (

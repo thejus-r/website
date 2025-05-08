@@ -1,9 +1,7 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import { Insight, Project } from "@/types/project";
 import { projects } from "@/content/projects";
-import { Link } from "next-view-transitions";
 import { H2, H3, P, Label } from "@/components/ui/Typography";
-import Button from "@/components/ui/Button";
 import Image from "next/image";
 
 const ProjectCard = (project: Project) => {
@@ -20,9 +18,7 @@ const ProjectCard = (project: Project) => {
             return <InsightCard key={index} {...insight} />;
           })}
         </div>
-        {/* <Link href={project.link}>
-          <Button>View Project</Button>
-        </Link> */}
+        {/* button to be added here for product page */}
       </div>
       <div className="md:w-[400] flex bg-linear-to-t border border-neutral-200 from-black/10 to-white">
         <Image
