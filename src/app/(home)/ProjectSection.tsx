@@ -20,9 +20,9 @@ const ProjectCard = (project: Project) => {
             return <InsightCard key={index} {...insight} />;
           })}
         </div>
-        <Link href={project.link}>
-          <Button>Read case study</Button>
-        </Link>
+        {/* <Link href={project.link}>
+          <Button>View Project</Button>
+        </Link> */}
       </div>
       <div className="md:w-[400] flex bg-linear-to-t border border-neutral-200 from-black/10 to-white">
         <Image
@@ -56,7 +56,7 @@ const ProjectSection = () => {
     <SectionWrapper noPadding>
       <section>
         <div className="flex p-5 md:p-10 flex-col gap-2 border-b border-b-neutral-200">
-          <H3>Projects</H3>
+          <H3>Products</H3>
           <P>Only the best of the best has made to here.</P>
         </div>
         {featuredProjects.map((project) => {

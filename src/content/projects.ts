@@ -1,5 +1,3 @@
-import PreviewPlaceholder from "@/components/PreviewPlaceholder";
-
 import { Project } from "@/types/project";
 
 export const projects: Project[] = [

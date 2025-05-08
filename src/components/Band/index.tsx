@@ -48,12 +48,12 @@ extend({ MeshLineGeometry, MeshLineMaterial });
 function Band({ maxSpeed = 50, minSpeed = 10 }) {
   // 3d Model geometry and materials
   const { nodes, materials } = useGLTF(
-    "/models/card.glb",
+    "/models/card.glb"
   ) as unknown as GLTFResult;
 
   const band =
     useRef<THREE.Mesh<THREE.BufferGeometry<THREE.NormalBufferAttributes>>>(
-      null,
+      null
     );
   const fixed = useRef<RapierRigidBody>(null);
   const j1 = useRef<RapierRigidBody>(null);
@@ -82,9 +82,13 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const { width, height } = useThree((state) => state.size);
 
   // rope joints
+  // @ts-expect-error Rigid Body
   useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 2]);
+  // @ts-expect-error Rigid Body
   useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 2]);
+  // @ts-expect-error Rigid Body
   useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 2]);
+  // @ts-expect-error Rigid Body
   useSphericalJoint(j3, card, [
     [0, 0, 0],
     [0, 1.4, 0],
@@ -98,7 +102,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
         new THREE.Vector3(),
         new THREE.Vector3(),
         new THREE.Vector3(),
-      ]),
+      ])
   );
 
   useFrame((state, delta) => {
@@ -135,7 +139,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
         if (ref.current && !ref.current.lerped) {
           // @ts-expect-error lerping
           ref.current.lerped = new THREE.Vector3().copy(
-            ref.current.translation(),
+            ref.current.translation()
           );
 
           const clampedDistance = Math.max(
@@ -143,13 +147,13 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
             Math.min(
               1,
               // @ts-expect-error lerping
-              ref.current.lerped.distanceTo(ref.current.translation()),
-            ),
+              ref.current.lerped.distanceTo(ref.current.translation())
+            )
           );
           // @ts-expect-error lerping
           ref.current.lerped.lerp(
             ref.current.translation(),
-            delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed)),
+            delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed))
           );
         }
       });
@@ -161,7 +165,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
       rot.copy(card.current.rotation());
       card.current.setAngvel(
         { x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z },
-        true,
+        true
       );
     }
   });
