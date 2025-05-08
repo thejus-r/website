@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Thejus Rajendran",
   description: "Product & Experience Designer",
   openGraph: {
-    images: "/opengraph-image.png",
+    images: "/og-image.png",
   },
 };
 
