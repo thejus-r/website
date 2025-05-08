@@ -103,7 +103,6 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
         new THREE.Vector3(),
         new THREE.Vector3(),
       ])
-
   );
 
   useFrame((state, delta) => {
@@ -155,7 +154,6 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           ref.current.lerped.lerp(
             ref.current.translation(),
             delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed))
-
           );
         }
       });
