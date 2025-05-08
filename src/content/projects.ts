@@ -9,6 +9,7 @@ export const projects: Project[] = [
     thumbnailImage: "/images/herkey/herkey-thumbnail-t.png",
     featured: true,
     active: true,
+
     insights: [
       {
         value: "35,00,000+",

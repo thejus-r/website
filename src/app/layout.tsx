@@ -6,6 +6,7 @@ import { ReactLenis } from "lenis/react";
 import { ViewTransitions } from "next-view-transitions";
 import Footer from "@/components/Footer";
 
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://thejus.design"),
   title: "Thejus Rajendran",

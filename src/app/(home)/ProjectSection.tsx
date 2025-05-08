@@ -29,6 +29,7 @@ const ProjectCard = (project: Project) => {
           width={500}
         />
       </div>
+
     </div>
   );
 };

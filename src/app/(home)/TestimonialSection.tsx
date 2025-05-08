@@ -26,6 +26,7 @@ const TestimonialCard = (testimonial: Testimonial) => {
   const { name, designation, content, profileImage } = testimonial;
   return (
     <div className="border-0 md:border border-neutral-200 p-0 sm:p-4 md:p-5 flex flex-col justify-between gap-5">
+
       <P type={"special"} intent={"primary"}>
         {content}
       </P>

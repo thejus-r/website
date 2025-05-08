@@ -2,6 +2,7 @@ import CardCanvas from "@/components/Band";
 import SectionWrapper from "@/components/SectionWrapper";
 import { Display, P } from "@/components/ui/Typography";
 
+
 const HeroSection = () => {
   return (
     <SectionWrapper>
