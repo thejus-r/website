@@ -1,15 +1,13 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import { Insight, Project } from "@/types/project";
 import { projects } from "@/content/projects";
-import { Link } from "next-view-transitions";
 import { H2, H3, P, Label } from "@/components/ui/Typography";
-import Button from "@/components/ui/Button";
+import Image from "next/image";
 
 const ProjectCard = (project: Project) => {
   const { name, description, insights } = project;
   return (
     <div className="flex flex-col-reverse md:flex-row p-5 md:p-10 gap-8 not-last:border-b border-b-neutral-200">
-      <div className="hidden lg:block h-24 w-24 bg-neutral-200"></div>
       <div className="flex flex-col gap-6 flex-1">
         <div className="flex flex-col gap-2">
           <H2>{name}</H2>
@@ -20,11 +18,18 @@ const ProjectCard = (project: Project) => {
             return <InsightCard key={index} {...insight} />;
           })}
         </div>
-        <Link href={project.link}>
-          <Button>Read case study</Button>
-        </Link>
+        {/* button to be added here for product page */}
       </div>
-      <div className="md:w-[350] h-[350] grid-pattern"></div>
+      <div className="md:w-[400] flex bg-linear-to-t border border-neutral-200 from-black/10 to-white">
+        <Image
+          className="object-cover"
+          src={project.thumbnailImage}
+          alt={project.name}
+          height={500}
+          width={500}
+          placeholder="blur"
+        />
+      </div>
     </div>
   );
 };
@@ -43,14 +48,15 @@ const InsightCard = ({ value, description }: Insight) => {
 };
 
 const ProjectSection = () => {
+  const featuredProjects = projects.filter((project) => project.featured);
   return (
     <SectionWrapper noPadding>
       <section>
         <div className="flex p-5 md:p-10 flex-col gap-2 border-b border-b-neutral-200">
-          <H3>Projects</H3>
+          <H3>Products</H3>
           <P>Only the best of the best has made to here.</P>
         </div>
-        {projects.map((project) => {
+        {featuredProjects.map((project) => {
           return <ProjectCard key={project.name} {...project} />;
         })}
       </section>

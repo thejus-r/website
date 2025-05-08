@@ -1,6 +1,6 @@
 "use client";
 import SectionWrapper from "../SectionWrapper";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 const links = [
   {
@@ -8,8 +8,8 @@ const links = [
     href: "/",
   },
   {
-    name: "Works",
-    href: "/works/herkey",
+    name: "Work",
+    href: "/work",
   },
   {
     name: "About",
@@ -21,7 +21,9 @@ const Navigation = () => {
   return (
     <SectionWrapper noPadding>
       <nav className="flex justify-between items-center mx-4 md:mx-10 h-16">
-        <div className="font-medium">Thejus Rajendran</div>
+        <div className="font-medium">
+          <Link href={"/"}>Thejus Rajendran</Link>
+        </div>
         <div className="">
           <ul className="flex gap-5">
             {links.map((link, index) => {

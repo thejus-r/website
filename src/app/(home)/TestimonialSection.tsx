@@ -1,6 +1,7 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import Testimonial from "@/types/testimonial";
 import testimonials from "@/content/testimonials";
+import Image from "next/image";
 import { H3, Label, P } from "@/components/ui/Typography";
 
 const TestimonialSection = () => {
@@ -11,7 +12,7 @@ const TestimonialSection = () => {
           <H3>Kind words, Only ...</H3>
           <P>What others say about me</P>
         </div>
-        <div className="grid grid-cols-1 mt-6 md:mt-8 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 mt-6 md:mt-8 md:grid-cols-3 gap-10 md:gap-4">
           {testimonials.map((testimonial, index) => {
             return <TestimonialCard key={index} {...testimonial} />;
           })}
@@ -22,14 +23,17 @@ const TestimonialSection = () => {
 };
 
 const TestimonialCard = (testimonial: Testimonial) => {
-  const { name, designation, content } = testimonial;
+  const { name, designation, content, profileImage } = testimonial;
   return (
-    <div className="border border-neutral-200 p-4 md:p-8 flex flex-col gap-8">
+    <div className="border-0 md:border border-neutral-200 p-0 sm:p-4 md:p-5 flex flex-col justify-between gap-5">
+
       <P type={"special"} intent={"primary"}>
         {content}
       </P>
       <div className="flex gap-4 items-end">
-        <div className="h-16 w-12 bg-neutral-100" />
+        <div className="h-16 w-12 bg-neutral-100">
+          <Image width={56} height={72} src={profileImage} alt={name} />
+        </div>
         <div>
           <Label size={"default"} type={"sans"} weight={"semibold"}>
             {name}

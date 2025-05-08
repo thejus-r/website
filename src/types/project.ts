@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export type Insight = {
   value: string;
   description: string;
@@ -6,10 +8,11 @@ export type Insight = {
 export type Project = {
   name: string;
   description: string;
-  thumbnailImage: string;
-  projectPreview: () => React.ReactElement;
+  thumbnailImage: StaticImageData;
   link: string;
   insights: Insight[];
+  featured: boolean;
+  active: boolean;
 };
 
 export default Project;

@@ -21,7 +21,7 @@
 }
 
 .grid-pattern {
-  opacity: 0.5;
+  opacity: 0.1;
   background-image: linear-gradient(
       var(--color-neutral-200) 1px,
       transparent 1px
