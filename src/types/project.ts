@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export type Insight = {
   value: string;
   description: string;
@@ -6,7 +8,7 @@ export type Insight = {
 export type Project = {
   name: string;
   description: string;
-  thumbnailImage: string;
+  thumbnailImage: StaticImageData;
   link: string;
   insights: Insight[];
   featured: boolean;

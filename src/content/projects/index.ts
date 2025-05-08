@@ -1,4 +1,5 @@
 import { Project } from "@/types/project";
+import herKeyThumbnail from "./herkey-thumbnail-t.png";
 
 export const projects: Project[] = [
   {
@@ -6,7 +7,7 @@ export const projects: Project[] = [
     description:
       "Redesign of the India’s largest career engagement platform for women",
     link: "/work/herkey",
-    thumbnailImage: "/images/herkey/herkey-thumbnail-t.png",
+    thumbnailImage: herKeyThumbnail,
     featured: true,
     active: true,
 
@@ -26,7 +27,7 @@ export const projects: Project[] = [
     description:
       "Adapting the online astrology platform for larger screens for reaching a wider audience",
     link: "/",
-    thumbnailImage: "",
+    thumbnailImage: herKeyThumbnail,
     featured: false,
     active: false,
     insights: [
@@ -45,7 +46,7 @@ export const projects: Project[] = [
     description:
       "Adapting the online astrology platform for larger screens for reaching a wider audience",
     link: "/",
-    thumbnailImage: "",
+    thumbnailImage: herKeyThumbnail,
     featured: false,
     active: false,
     insights: [

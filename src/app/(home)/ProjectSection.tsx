@@ -27,9 +27,9 @@ const ProjectCard = (project: Project) => {
           alt={project.name}
           height={500}
           width={500}
+          placeholder="blur"
         />
       </div>
-
     </div>
   );
 };

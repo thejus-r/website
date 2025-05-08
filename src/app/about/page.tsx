@@ -2,6 +2,11 @@ import SectionWrapper from "@/components/SectionWrapper";
 import { Display, DisplaySmall, Label, P } from "@/components/ui/Typography";
 import Image from "next/image";
 
+// images
+//
+import detourImage from "./detour.png";
+import me from "./me.png";
+
 const AboutPage = () => {
   return (
     <>
@@ -28,10 +33,11 @@ const AboutPage = () => {
             <div className="order-first md:order-last">
               <Image
                 className="h-full w-full object-contain"
-                src={"/images/me.png"}
+                src={me}
                 alt="Thejus"
                 width={500}
                 height={500}
+                placeholder="blur"
               />
             </div>
           </div>
@@ -64,9 +70,10 @@ const AboutPage = () => {
             <Image
               className="w-full md:max-w-lg h-full object-contain"
               alt="detour"
-              src={"/images/detour.png"}
+              src={detourImage}
               width={500}
               height={500}
+              placeholder="blur"
             />
           </div>
         </section>

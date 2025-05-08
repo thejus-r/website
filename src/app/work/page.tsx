@@ -1,13 +1,21 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import { Display, DisplaySmall, Label, P } from "@/components/ui/Typography";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+
+// images
+import teamImage1 from "./team-1.png";
+import teamImage2 from "./team-2.png";
+import teamImage3 from "./team-3.png";
+
+// herkey thumbnail
+import herkeyThumbnail from "./herkey-thumbnail.png";
 
 type Work = {
   name: string;
   description: string;
   type: string;
   category: string[];
-  thumbnail: string;
+  thumbnail: StaticImageData;
 };
 
 const works: Work[] = [
@@ -17,7 +25,7 @@ const works: Work[] = [
       "India's largest career community for women - to nurture, support and elevate her career aspirations",
     type: "app",
     category: ["career", "networking"],
-    thumbnail: "/images/projects/herkey-thumbnail.png",
+    thumbnail: herkeyThumbnail,
   },
   // {
   //   name: "Addng.Plus",
@@ -98,24 +106,27 @@ const WorkPage = () => {
           <div className="grid grid-cols-2 gap-2">
             <Image
               className="w-full"
-              src={"/images/team-2.png"}
+              src={teamImage2}
               width={500}
               height={500}
               alt={"team photo"}
+              placeholder="blur"
             />
             <Image
               className="w-full"
-              src={"/images/team-1.png"}
+              src={teamImage1}
               width={500}
               height={500}
               alt={"team photo"}
+              placeholder="blur"
             />
             <Image
               className="col-span-2 w-full"
-              src={"/images/team-3.png"}
+              src={teamImage3}
               width={500}
               height={250}
               alt={"team photo"}
+              placeholder="blur"
             />
           </div>
         </section>
