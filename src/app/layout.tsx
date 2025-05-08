@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import {
-  geistMono,
-  inter,
-  interItalic,
-  satoshi,
-  satoshiItalic,
-} from "@/styles/fonts";
+import { geistMono, inter, satoshi } from "@/styles/fonts";
 import Navigation from "@/components/Navigation";
 import { ReactLenis } from "lenis/react";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://thejus.design"),
   title: "Thejus Rajendran",
   description: "Product & Experience Designer",
+  openGraph: {
+    images: "/og-image.png",
+  },
 };
 
 export default function RootLayout({
@@ -23,12 +22,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${satoshi.variable} ${satoshiItalic.variable} ${inter.variable} ${interItalic.variable} ${geistMono.variable} `}
+      className={`${satoshi.variable} ${inter.variable} ${geistMono.variable} `}
     >
       <ReactLenis root>
-        <body className="font-sans antialiased">
+        <body className="subpixel-antialiased flex flex-col">
           <Navigation />
-          {children}
+          <div className="flex-1">{children}</div>
+          <Footer />
         </body>
       </ReactLenis>
     </html>
