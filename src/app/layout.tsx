@@ -3,9 +3,7 @@ import "@/styles/globals.css";
 import { geistMono, inter, satoshi } from "@/styles/fonts";
 import Navigation from "@/components/Navigation";
 import { ReactLenis } from "lenis/react";
-import { ViewTransitions } from "next-view-transitions";
 import Footer from "@/components/Footer";
-
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thejus.design"),
@@ -27,13 +25,11 @@ export default function RootLayout({
       className={`${satoshi.variable} ${inter.variable} ${geistMono.variable} `}
     >
       <ReactLenis root>
-        <ViewTransitions>
-          <body className="subpixel-antialiased flex flex-col">
-            <Navigation />
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </body>
-        </ViewTransitions>
+        <body className="subpixel-antialiased flex flex-col">
+          <Navigation />
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </body>
       </ReactLenis>
     </html>
   );

@@ -1,6 +1,6 @@
 "use client";
 import SectionWrapper from "../SectionWrapper";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 const links = [
   {

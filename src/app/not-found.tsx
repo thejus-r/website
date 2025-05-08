@@ -2,7 +2,7 @@
 
 import Button from "@/components/ui/Button";
 import { DisplaySmall, Label } from "@/components/ui/Typography";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 const LostPage = () => {
   return (

@@ -82,9 +82,13 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const { width, height } = useThree((state) => state.size);
 
   // rope joints
+  // @ts-expect-error rope join
   useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 2]);
+  // @ts-expect-error rope join
   useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 2]);
+  // @ts-expect-error rope join
   useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 2]);
+  // @ts-expect-error rope join
   useSphericalJoint(j3, card, [
     [0, 0, 0],
     [0, 1.4, 0],
