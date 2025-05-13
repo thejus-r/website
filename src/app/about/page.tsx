@@ -53,8 +53,8 @@ const AboutPage = () => {
             <div className="flex flex-col gap-4 mt-4">
               <P size={"large"}>
                 Before graduating as a computer science engineer, I used to
-                volunteer on forums as a designer. I was my start of the
-                designer journey.
+                volunteer on forums as a designer. That was my kickoff for the
+                design journey.
               </P>
               <P size={"large"}>
                 However, I still liked the aspect of building products as an

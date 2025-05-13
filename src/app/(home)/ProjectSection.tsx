@@ -3,9 +3,10 @@ import { Insight, Project } from "@/types/project";
 import { projects } from "@/content/projects";
 import { H2, H3, P, Label } from "@/components/ui/Typography";
 import Image from "next/image";
+import Button from "@/components/ui/Button";
 
 const ProjectCard = (project: Project) => {
-  const { name, description, insights } = project;
+  const { name, description, insights, active, link, thumbnailImage } = project;
   return (
     <div className="flex flex-col-reverse md:flex-row p-5 md:p-10 gap-8 not-last:border-b border-b-neutral-200">
       <div className="flex flex-col gap-6 flex-1">
@@ -18,13 +19,18 @@ const ProjectCard = (project: Project) => {
             return <InsightCard key={index} {...insight} />;
           })}
         </div>
+        {active ? (
+          <a href={link} target="_blank">
+            <Button>Request case study</Button>
+          </a>
+        ) : null}
         {/* button to be added here for product page */}
       </div>
       <div className="md:w-[400] flex bg-linear-to-t border border-neutral-200 from-black/10 to-white">
         <Image
           className="object-cover"
-          src={project.thumbnailImage}
-          alt={project.name}
+          src={thumbnailImage}
+          alt={name}
           height={500}
           width={500}
           placeholder="blur"

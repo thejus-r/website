@@ -9,6 +9,8 @@ import teamImage3 from "./team-3.png";
 
 // herkey thumbnail
 import herkeyThumbnail from "./herkey-thumbnail.png";
+import addngPlusThumbnail from "./adding-plus-thumbnail.png";
+import astroSureThumbnail from "./astro-sure-thumbnail.png";
 
 type Work = {
   name: string;
@@ -27,20 +29,22 @@ const works: Work[] = [
     category: ["career", "networking"],
     thumbnail: herkeyThumbnail,
   },
-  // {
-  //   name: "Addng.Plus",
-  //   description:
-  //     "Optimize your marketing funnels by up to 2X, at 20-30% lower costs with our funnel optimizer platform.",
-  //   type: "app",
-  //   category: ["ad-tech", "marketing"],
-  // },
-  // {
-  //   name: "AstroSure.ai",
-  //   description:
-  //     "AI-driven personalized astrological guidance app with insights from experienced astrologers",
-  //   type: "app",
-  //   category: ["astrology", "ai"],
-  // },
+  {
+    name: "Addng.Plus",
+    description:
+      "Optimize your marketing funnels by up to 2X, at 20-30% lower costs with our funnel optimizer platform.",
+    type: "app",
+    category: ["ad-tech", "marketing"],
+    thumbnail: addngPlusThumbnail,
+  },
+  {
+    name: "AstroSure.ai",
+    description:
+      "AI-driven personalized astrological guidance app with insights from experienced astrologers",
+    type: "app",
+    category: ["astrology", "ai"],
+    thumbnail: astroSureThumbnail,
+  },
   // {
   //   name: "ZipSFA",
   //   description:
@@ -139,7 +143,7 @@ const WorkPage = () => {
             </Label>
             <DisplaySmall>Products that has been delivered</DisplaySmall>
             <P size={"large"}>
-              I got to work with clients such as Microsoft, Herkey, Valuequest,
+              Work with 12+ clients such as Microsoft, Herkey, Valuequest,
               Astrosure.ai, etc.
             </P>
           </div>
