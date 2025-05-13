@@ -143,8 +143,8 @@ const WorkPage = () => {
             </Label>
             <DisplaySmall>Products that has been delivered</DisplaySmall>
             <P size={"large"}>
-              Work with 12+ clients such as Microsoft, Herkey, Valuequest,
-              Astrosure.ai, etc.
+              Have worked with 12+ clients such as Microsoft, Herkey,
+              Valuequest, Astrosure.ai, etc.
             </P>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 mt-8 md:mt-8">
@@ -154,7 +154,7 @@ const WorkPage = () => {
                   className="flex flex-col md:p-4 md:border gap-4 border-neutral-200"
                   key={index}
                 >
-                  <div className="w-full h-96">
+                  <div className="w-full h-96 bg-neutral-100">
                     <Image
                       className="h-full w-full object-cover"
                       alt=""
