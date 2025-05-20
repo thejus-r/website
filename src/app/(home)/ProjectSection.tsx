@@ -21,7 +21,7 @@ const ProjectCard = (project: Project) => {
         </div>
         {active ? (
           <a href={link} target="_blank">
-            <Button>Request case study</Button>
+            <Button>View case study</Button>
           </a>
         ) : null}
         {/* button to be added here for product page */}
