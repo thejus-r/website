@@ -28,10 +28,10 @@ export const projects: Project[] = [
     name: "Adding.Plus",
     description:
       "A no-code marketing funnel platform that connects connects the dots between audience, experience, and insights.",
-    link: "/",
+    link: "https://www.figma.com/deck/2WAmVM6LTdmhtV0uAqkS8B/Studeyo?node-id=1-1360&t=hOkHWFSQP8s4WfiA-1",
     thumbnailImage: addingPlusThumbnail,
     featured: true,
-    active: false,
+    active: true,
     insights: [
       {
         value: "150+",
