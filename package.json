@@ -1,0 +1,34 @@
+{
+  "name": "website",
+  "author": {
+    "name": "Thejus Rajendran",
+    "email": "thejusr1999@icloud.com",
+    "url": "https://juzy.dev"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.8.2",
+    "@nuxt/fonts": "^0.12.1",
+    "@nuxtjs/mdc": "^0.18.3",
+    "better-sqlite3": "^12.4.1",
+    "nuxt": "^4.2.1",
+    "vue": "^3.5.24",
+    "vue-router": "^4.6.3",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/bun": "latest",
+    "sass": "^1.94.0",
+    "tailwindcss": "^4.1.17"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
