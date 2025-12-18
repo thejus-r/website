@@ -1,0 +1,24 @@
+---
+import Tag from "./tag.astro";
+
+type Props = {
+  title: string;
+  description: string;
+  tags: string[];
+  date: Date;
+};
+const { title, description, tags, date } = Astro.props;
+
+import { relativeTime } from "../utils/date";
+---
+
+<div
+  class="p-4 md:p-6 group border hover:brightness-125 flex flex-col gap-3 rounded border-neutral-800 bg-neutral-950"
+>
+  <span class="font-mono text-sm text-neutral-400">{relativeTime(date)}</span>
+  <h3 class="font-sans text-xl md:text-3xl">{title}</h3>
+  <p class="md:text-lg text-neutral-400">{description}</p>
+  <div class="flex gap-2 flex-wrap">
+    {tags.map((tag) => <Tag>{tag}</Tag>)}
+  </div>
+</div>

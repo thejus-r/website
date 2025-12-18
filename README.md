@@ -1,6 +1,7 @@
-# Personal Website (thejus.design)
+# Personal Website
 
-## Tech Stack
-- NextJS
+## Stack
+- AstroJS
 - TailwindCSS
-- Lenis
+- MDX
+- Deployed on Cloudflare
