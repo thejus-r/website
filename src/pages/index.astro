@@ -1,11 +1,11 @@
 ---
 import { getEntry } from "astro:content";
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 import Tag from "../components/tag.astro";
 import Layout from "../layouts/base-layout.astro";
 
-const socials = await getEntry("socials", "links")
---- 
+const socials = await getEntry("socials", "links");
+---
 
 <Layout title="Thejus Rajendran">
   <div class="flex flex-col grow p-8 md:p-12">
@@ -31,11 +31,16 @@ const socials = await getEntry("socials", "links")
         <h3 class="font-serif text-2xl">My Stack</h3>
         <span class="block border border-neutral-700 grow"></span>
       </div>
-      <div class="flex gap-2 mt-4">
+      <div class="flex flex-wrap gap-2 mt-4">
+        <Tag> GoLang </Tag>
         <Tag> React </Tag>
+        <Tag> NextJS </Tag>
+        <Tag> Docker </Tag>
+        <Tag> PostgreSQL </Tag>
         <Tag> TailwindCSS </Tag>
         <Tag>Typescript</Tag>
         <Tag>Javascript</Tag>
+        <Tag>Python</Tag>
       </div>
     </div>
     <div class="mt-8">
@@ -44,14 +49,21 @@ const socials = await getEntry("socials", "links")
         <span class="block border border-neutral-700 grow"></span>
       </div>
       <div class="flex fill-white gap-2 mt-4">
-        {socials?.data.map((link) => 
-        <a class="hover:brightness-125" href={link.link} target="_blank">
-          <Tag>
-            <Image class="w-5 h-5 fill-amber-400 text-neutral-600 stroke-white" slot="icon" src={link.icon} alt="icon"/>
-            {link.name} 
-          </Tag>
-        </a>
-        )}
+        {
+          socials?.data.map((link) => (
+            <a class="hover:brightness-125" href={link.link} target="_blank">
+              <Tag>
+                <Image
+                  class="w-5 h-5 fill-amber-400 text-neutral-600 stroke-white"
+                  slot="icon"
+                  src={link.icon}
+                  alt="icon"
+                />
+                {link.name}
+              </Tag>
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>

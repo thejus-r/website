@@ -6,12 +6,14 @@ import "../styles/index.css";
 type Props = {
   title?: string;
   description?: string;
+  ogImage?: string;
 };
 
-const { title, description } = Astro.props;
+const { title, description, ogImage } = Astro.props;
 
 const defaultTitle = "Thejus Rajendran";
 const defaultDescription = "Software Engineer";
+const defaultOgImage = "/images/og-image.png";
 ---
 
 <!doctype html>
@@ -20,6 +22,8 @@ const defaultDescription = "Software Engineer";
     <BaseHead />
     <title>{title ?? defaultTitle}</title>
     <meta name="description" content={description ?? defaultDescription} />
+    <meta property="og:title" content={title ?? defaultTitle} />
+    <meta property="og:image" content={ogImage ?? defaultOgImage} />
   </head>
   <body
     class="max-w-7xl bg-neutral-950 text-neutral-200 mx-auto h-screen grid grid-cols-12"
