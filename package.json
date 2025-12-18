@@ -17,6 +17,7 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
     "@tailwindcss/typography": "^0.5.19",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1"
