@@ -1,0 +1,36 @@
+---
+import BaseHead from "@components/base-head.astro";
+import Navbar from "@components/navbar.astro";
+import "../styles/index.css";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { title, description } = Astro.props;
+
+const defaultTitle = "Thejus Rajendran";
+const defaultDescription = "Software Engineer";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead />
+    <title>{title ?? defaultTitle}</title>
+    <meta name="description" content={description ?? defaultDescription} />
+  </head>
+  <body
+    class="max-w-7xl bg-neutral-950 text-neutral-200 mx-auto h-screen grid grid-cols-12"
+  >
+    <div
+      class="col-span-12 md:col-span-8 md:col-start-3 col-start-0 flex flex-col"
+    >
+      <Navbar />
+      <main class="flex flex-col grow">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "links": [
+    {
+      "name": "Github",
+      "link": "https://github.com/thejus-r",
+      "icon": "@assets/icons/github.svg"
+    },
+    {
+      "name": "LinkedIn",
+      "link": "https://www.linkedin.com/in/thejus-rajendran",
+      "icon": "@assets/icons/linkedin.svg"
+    },
+    {
+      "name": "Bluesky",
+      "link": "https://bsky.app/profile/juzy.dev",
+      "icon": "@assets/icons/bluesky.svg"
+    }
+  ]
+}

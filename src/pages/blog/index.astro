@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/base-layout.astro";
+import BlogCard from "../../components/blog-card.astro";
+
+const blogs = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<Layout>
+  <div class="p-8 md:p-12">
+    <div class="flex flex-col gap-2">
+      <h2 class="text-4xl font-serif">Blogs</h2>
+      <p class="text-neutral-400 mt-4 text-lg">I plan to write more frequently.</p>
+    </div>
+    <ul class="mt-8">
+      {
+        blogs.map((blog) => (
+          <li>
+            <a href={`/blog/${blog.id}`}>
+              <BlogCard {...blog.data} />
+            </a>{" "}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>

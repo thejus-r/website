@@ -1,0 +1,33 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/base-layout.astro";
+import BlogHeader from "../../components/blog/blog-header.astro";
+
+export async function getStaticPaths() {
+  const blogs = await getCollection("blog");
+
+  return blogs.map((blog) => ({
+    params: { id: blog.id },
+    props: { blog },
+  }));
+}
+
+const { blog } = Astro.props;
+const { Content } = await render(blog);
+---
+
+<Layout title={blog.data.title} description={blog.data.description}>
+  <div class="p-8 md:p-12">
+    <a href="/blog">
+      <span class="mb-5 block">
+      back to blogs
+      </span>
+    </a>
+    <BlogHeader {...blog.data}/>
+  <article
+    class="prose-invert text-pretty prose-neutral prose lg:prose-lg xl:prose-xl prose-h1:font-serif prose-h1:font-normal"
+  >
+    <Content />
+  </article>
+  </div>
+</Layout>

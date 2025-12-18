@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@font-face {
+    font-family: "Geist";
+    src: url('/fonts/Geist.woff2') format('woff2');
+    font-weight: 200 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "GeistMono";
+    src: url('/fonts/GeistMono.woff2') format('woff2');
+    font-weight: 200 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Instrument Serif";
+    src: url('/fonts/InstrumentSerif-Regular.ttf') format('truetype');
+}
+
+@theme {
+    --font-sans: "Geist", sans-serif;
+    --font-mono: "GeistMono", monospace;
+    --font-serif: "Instrument Serif", serif;
+}
+
+html {
+    scrollbar-gutter: stable
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3f3f3f;
+  border-radius: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #808080;
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

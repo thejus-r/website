@@ -1,0 +1,11 @@
+---
+const { href, name } = Astro.props;
+
+const isExternal = (href: string) => {
+  return !href.startsWith("/") || !href.startsWith("#");
+};
+---
+
+<>
+  <a> </a>
+</>
