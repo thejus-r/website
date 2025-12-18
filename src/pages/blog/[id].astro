@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/base-layout.astro";
 import BlogHeader from "../../components/blog/blog-header.astro";
+import ChevronLeft from "@assets/icons/chevron-left.svg";
 
 export async function getStaticPaths() {
   const blogs = await getCollection("blog");
@@ -16,18 +17,27 @@ const { blog } = Astro.props;
 const { Content } = await render(blog);
 ---
 
-<Layout title={blog.data.title} description={blog.data.description}>
+<Layout
+  title={blog.data.title}
+  description={blog.data.description}
+  ogImage={blog.data.ogImage}
+>
   <div class="p-8 md:p-12">
-    <a href="/blog">
-      <span class="mb-5 block">
-      back to blogs
-      </span>
+    <a
+      class="flex gap-2 fill-neutral-500 items-center mb-4 group text-neutral-500"
+      href="/blog"
+    >
+      <span
+        class="block transition-all group-hover:fill-neutral-200 group-hover:-translate-x-0.5"
+        ><ChevronLeft /></span
+      >
+      <span class="block group-hover:text-neutral-200"> back to blogs </span>
     </a>
-    <BlogHeader {...blog.data}/>
-  <article
-    class="prose-invert text-pretty prose-neutral prose lg:prose-lg xl:prose-xl prose-h1:font-serif prose-h1:font-normal"
-  >
-    <Content />
-  </article>
+    <BlogHeader {...blog.data} />
+    <article
+      class="prose-invert text-pretty prose-neutral prose lg:prose-lg xl:prose-xl prose-h1:font-serif prose-h1:font-normal"
+    >
+      <Content />
+    </article>
   </div>
 </Layout>

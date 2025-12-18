@@ -1,8 +1,9 @@
 ---
 title: "Implementing Refresh Token Rotation to secure a web application."
 description: "Building a robust authentication system for my web app with Refresh Tokens and Access Tokens"
-date: "2025-12-12"
+date: "2025-12-18"
 tags: ["react", "typescript", "raven", "react", "typescript", "raven"]
+ogImage: "/images/refresh-token-rotation-og-image.png"
 published: true
 ---
 
